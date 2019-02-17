@@ -122,7 +122,7 @@ Markdown 语法教程教程：最实用的...">
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                                <a href="/categories/充电学习/"><i class="fa "></i>充电学习</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
@@ -151,7 +151,7 @@ Markdown 语法教程教程：最实用的...">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            
+            <a class="category-link" href="/categories/充电学习/">充电学习</a>
         </span>
     
 
@@ -182,7 +182,12 @@ Markdown 语法教程教程：最实用的...">
 <hr>
 <h2 id="Markdown-语法教程"><a href="#Markdown-语法教程" class="headerlink" title="Markdown 语法教程"></a>Markdown 语法教程</h2><p>教程：<a href="https://www.jianshu.com/p/f3147a804368" target="_blank" rel="noopener">最实用的 Markdown 语法教程</a></p>
 <hr>
-<h2 id="如何添加pdf功能"><a href="#如何添加pdf功能" class="headerlink" title="如何添加pdf功能"></a>如何添加pdf功能</h2><p>教程：<a href="https://blog.csdn.net/lihangll/article/details/80516085" target="_blank" rel="noopener">GitHub中Hexo next主题下搭建的博客中增加PDF插件</a><br>注意事项：hexo-pdf安装包需要放在hexo安装目录下。</p>
+<h2 id="如何添加pdf功能"><a href="#如何添加pdf功能" class="headerlink" title="如何添加pdf功能"></a>如何添加pdf功能</h2><p>教程：<a href="https://blog.csdn.net/lihangll/article/details/80516085" target="_blank" rel="noopener">GitHub中Hexo next主题下搭建的博客中增加PDF插件</a><br>注意事项：hexo-pdf安装包需要放在博客安装目录下。就我们平时输入hexo g,hexo s,hexo d 那个路径下命令行输入。后面再需要安装别的插件时，也是这个路径。</p>
+<hr>
+<h2 id="如何添加视频"><a href="#如何添加视频" class="headerlink" title="如何添加视频"></a>如何添加视频</h2><p>最近几日卡在这里，尝试了好几种：<br><strong>dplayer:</strong> 颜值超高，<a href="http://dplayer.js.org/#/" target="_blank" rel="noopener">传送门</a>这不就是我理想中的web播放器么，简洁美观。说干就干！装上再说。<br>然而装好之后，使用起来却发现问题来了。dplayer播放器的视频来源有两种，一种是网页链接（貌似是将视频上传到一个七牛云的云存储，回头再试一下），另外一种是本地视频直接访问。我选择了本地访问，然后问题就出现了。首先由于我的网站是托管在GitHub上，单个文件最大不能超过100M。这导致我在将视频上传到网站时，频频被拒绝。后来将视频压缩至了100M以内，上传非常慢，不符合我建设这个轻量级博客的初衷。</p>
+<p><strong>B站自带:</strong> 颜值略逊一筹，感觉就像打广告的。但是由于我之前将视频以同步至B站，最后就很省事的，直接调用了。</p>
+<hr>
+<h2 id="如何添加评论功能"><a href="#如何添加评论功能" class="headerlink" title="如何添加评论功能"></a>如何添加评论功能</h2><p>教程： <a href="https://www.bigwin.ml/2018/11/29/valine-for-next/" target="_blank" rel="noopener">在Hexo博客的next主题中启用Valine评论</a></p>
 
     </div>
     
@@ -225,8 +230,8 @@ Markdown 语法教程教程：最实用的...">
         new Valine({
             av: AV,
             el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            appId: 'eKSu1dU1EnS6hRhcryDVmhgq-gzGzoHsz',
+            appKey: 'rnWgDAT2CH16DAKw6L9or4MG',
             placeholder: '说点什么吧',
             notify: false,
             verify: false,
@@ -251,7 +256,7 @@ Markdown 语法教程教程：最实用的...">
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo搭建指南"><span class="toc-text">hexo搭建指南</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown-语法教程"><span class="toc-text">Markdown 语法教程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何添加pdf功能"><span class="toc-text">如何添加pdf功能</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo搭建指南"><span class="toc-text">hexo搭建指南</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown-语法教程"><span class="toc-text">Markdown 语法教程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何添加pdf功能"><span class="toc-text">如何添加pdf功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何添加视频"><span class="toc-text">如何添加视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何添加评论功能"><span class="toc-text">如何添加评论功能</span></a></li></ol>
         
     </div>
 </aside>
