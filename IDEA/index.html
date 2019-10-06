@@ -16,11 +16,11 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="吉他">
+    <meta name="keywords" content="充电学习">
 
 
-    <meta name="description" content="简介　　这是岸部真明一首特别经典的指弹曲，改编自卡朋特的一首经典金曲《Yesterday Once More》，中文名为《昨日重现》。以后听到自己弹过的曲子，应该会回忆起曾经那些练琴的夜晚吧。
-...">
+    <meta name="description" content="解决IDEA中Spring Boot启动报错Application startup failed
+报错内容：1ERROR 17040 [main] o.s.boot.SpringApplicat...">
 
 
 
@@ -32,7 +32,7 @@
     <!--Title-->
 
 
-<title>【吉他指弹】yesterdayOnceMore | 龙娅婷</title>
+<title>IDEA——解决IDEA中Spring Boot启动报错Application startup failed | 龙娅婷</title>
 
 
     <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
@@ -65,7 +65,7 @@
 
     
 
-<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
+</head>
 
 </html>
 <!--[if lte IE 8]>
@@ -153,16 +153,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="【吉他指弹】yesterdayOnceMore">
+        <h1 id="IDEA——解决IDEA中Spring Boot启动报错Application startup failed">
             
-	            【吉他指弹】yesterdayOnceMore
+	            IDEA——解决IDEA中Spring Boot启动报错Application startup failed
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/吉他/">吉他</a>
+            <a class="category-link" href="/categories/Java/">Java</a>
         </span>
     
 
@@ -171,7 +171,7 @@
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
-                    <a class="tag-link" href="/tags/吉他/">吉他</a>
+                    <a class="tag-link" href="/tags/充电学习/">充电学习</a>
                 
             </span>
         </span>
@@ -181,7 +181,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/02/14</span>
+            <span class="date-meta">2019/10/06</span>
         </span>
         
     
@@ -191,23 +191,19 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>　　这是岸部真明一首特别经典的指弹曲，改编自卡朋特的一首经典金曲《Yesterday Once More》，中文名为《昨日重现》。以后听到自己弹过的曲子，应该会回忆起曾经那些练琴的夜晚吧。<br><a id="more"></a></p>
+        <p>解决IDEA中Spring Boot启动报错Application startup failed</p>
+<h2 id="报错内容："><a href="#报错内容：" class="headerlink" title="报错内容："></a>报错内容：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 17040 [main] o.s.boot.SpringApplication : Application startup failed</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="吉他演奏视频"><a href="#吉他演奏视频" class="headerlink" title="吉他演奏视频"></a>吉他演奏视频</h2><div id="dplayer5" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer5"),"theme":"#FADFA3","loop":true,"video":{"url":"https://hexofile.oss-cn-beijing.aliyuncs.com/yesterdayOnceMore/yesterdayOnceMore.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
-<hr>
-<h2 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=3&id=2056515326&auto=0&height=66"></iframe>
-
-<hr>
-<h2 id="吉他谱"><a href="#吉他谱" class="headerlink" title="吉他谱"></a>吉他谱</h2>
-
-	<div class="row">
-    <embed src="https://hexofile.oss-cn-beijing.aliyuncs.com/yesterdayOnceMore/yesterdayOnceMore.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
- 
-<hr>
-<h2 id="封面"><a href="#封面" class="headerlink" title="封面"></a>封面</h2><p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/yesterdayOnceMore/yesterdayOnceMore.jpg" alt="yesterdayOnceMore封面"></p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p><strong>原因：工程要求的JDK版本与环境所配置的JDK版本不同所致。</strong></p>
+<p>pom.xml文件中所要求的为 1.8</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&lt;properties&gt;</span><br><span class="line">		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">		&lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">&lt;/properties&gt;&#125;</span><br></pre></td></tr></table></figure>
+<p>导入工程后，查看默认的JDK，更改为1.8</p>
+<ol>
+<li><p>路径为 File -&gt; Project Structure -&gt;Platform Settings -&gt;SDKs 点击”+”号，添加版本为1.8的JDK所在的根目录<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/IDEA/add_JDK.jpg" alt></p>
+</li>
+<li><p>修改Project SDK 为1.8<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/IDEA/change_JDK.jpg" alt></p>
+</li>
+</ol>
 
     </div>
     
@@ -225,15 +221,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/未闻花名/" class="pre-post btn btn-default" title="【吉他指弹】未闻花名">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【吉他指弹】未闻花名</span>
-        </a>
     
-    
-        <a href="/1967/" class="next-post btn btn-default" title="【吉他指弹】1967">
+        <a href="/798/" class="next-post btn btn-default" title="798">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">【吉他指弹】1967</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">798</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -276,7 +267,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#吉他演奏视频"><span class="toc-text">吉他演奏视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#音频"><span class="toc-text">音频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#吉他谱"><span class="toc-text">吉他谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封面"><span class="toc-text">封面</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#报错内容："><span class="toc-text">报错内容：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法："><span class="toc-text">解决方法：</span></a></li></ol>
         
     </div>
 </aside>
