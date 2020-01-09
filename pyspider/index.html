@@ -1,0 +1,371 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="龙娅婷">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="爬虫">
+
+
+    <meta name="description" content="环境搭建pyspider 介绍pyspider 是一个基于Python语言的功能强大的爬虫框架，支持在浏览器界面进行代码调试，对爬取状态、进度和结果实时查看，支持多线程工作。更多请查看官方文档。...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>使用Pyspider爬虫网站数据 | 龙娅婷</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
+
+
+    <link rel="icon" href="/img/bitbug_favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="longyating">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">龙娅婷</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/充电学习/"><i class="fa "></i>充电学习</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书笔记/"><i class="fa "></i>读书笔记</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/吉他"><i class="fa "></i>吉他</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/摄影游记"><i class="fa "></i>摄影游记</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="https://www.longyating.com/bbs/"><i class="fa "></i>留言板</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/about/"><i class="fa "></i>关于</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="使用Pyspider爬虫网站数据">
+            
+	            使用Pyspider爬虫网站数据
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/充电学习/">充电学习</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/爬虫/">爬虫</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2020/01/09</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="pyspider-介绍"><a href="#pyspider-介绍" class="headerlink" title="pyspider 介绍"></a>pyspider 介绍</h2><p>pyspider 是一个基于Python语言的功能强大的爬虫框架，支持在浏览器界面进行代码调试，对爬取状态、进度和结果实时查看，支持多线程工作。更多请查看<a href="http://docs.pyspider.org/en/latest/" target="_blank" rel="noopener">官方文档</a>。</p>
+<h2 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h2><ul>
+<li>Windows 10</li>
+<li>Python 3.6</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先搭建环境，注意pyspider与python3.7 因为关键字冲突而不兼容，需要进行繁琐的配置。因此，我使用了Python 3.6。安装pyspider:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyspider</span><br></pre></td></tr></table></figure></p>
+<p>但是 报错缺少依赖包 pycurl。<br>到网站<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="noopener">https://www.lfd.uci.edu/~gohlke/pythonlibs/</a>找到pycurl，下载自己对应的版本<br>如何下载自己所对应的的第三方依赖包的版本？<br>在cmd中输入pyhton：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Python 3.6.8 |Anaconda, Inc.| (default, Feb 21 2019, 18:30:04) [MSC v.1916 64 bit (AMD64)] on win32</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br></pre></td></tr></table></figure></p>
+<p>由此可知，我的Python 为3.6.8  64bit (AMD64)。<br>所以下载的pycurl 为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[pycurl‑7.43.0.3‑cp36‑cp36m‑win_amd64.whl](javascript:; <span class="string">"[3.1 MB] [Jun 23, 2019]"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>其中：</p>
+<ul>
+<li>cp36: Pyhton 3.6</li>
+<li>amd64: 64位</li>
+</ul>
+<p>另外，如果爬取的页面中，有带JS的页面，则需要安装 PlantomJS ，安装教程如下：<br>点击<a href="https://phantomjs.org/download.html" target="_blank" rel="noopener">https://phantomjs.org/download.html</a>，下载Windows版本，然后解压缩出来后，将\bin 目录下的 phantomjs.exe 文件放到 Python.exe 的同级目录下即可。</p>
+<p>配置好环境后，运行Pyspider：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pypider all</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/run.png" alt="run"><br>可以看到phantomjs 已经运行， pyspider运行在 <a href="http://127.0.0.1:5000/" target="_blank" rel="noopener">http://127.0.0.1:5000/</a> 端口，下为<strong>pyspider dashboard</strong>界面。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/jieMian.png" alt="界面"><br>至此，环境已经配置成功。注意CMD窗口不要关闭，否则端口将失效。</p>
+<h1 id="爬虫实例"><a href="#爬虫实例" class="headerlink" title="爬虫实例"></a>爬虫实例</h1><p><strong>需求</strong>：以 <a href="https://www.luoow.com/" target="_blank" rel="noopener">https://www.luoow.com/</a> 为例，爬取该网站的999个歌单的数据信息（歌单名称，歌曲数目，歌单介绍，歌单封面链接，歌单中每个歌曲的名称及歌手名称），并以json格式保存在txt文本文件中。</p>
+<p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/luoow.png" alt="落网"></p>
+<h2 id="新建任务"><a href="#新建任务" class="headerlink" title="新建任务"></a>新建任务</h2><p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/xinJian.png" alt="新建任务"></p>
+<ul>
+<li>Project Name: 项目的名称，自己可以随意填写。</li>
+<li>Start URL(s): 项目爬取的目标网址。</li>
+</ul>
+<p>下为系统自动生成的初始化界面：<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/chuShiHua.png" alt="初始化界面"></p>
+<h2 id="代码编写与调试"><a href="#代码编写与调试" class="headerlink" title="代码编写与调试"></a>代码编写与调试</h2><p>代码的编写需要用到<a href="https://www.w3school.com.cn/cssref/css_selectors.asp" target="_blank" rel="noopener">CSS选择器</a>的知识，在目标网页右键<code>检查</code><br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/css.png" alt="网页源码"><br>有几种常用的格式：</p>
+<ul>
+<li><p>获取这行所指的文本 比如 vol.5 A New Begining<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/title.png" alt="text"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response.doc(<span class="string">'div[class="title"]'</span>).text()  <span class="comment">#input[id = “code”]  id属性为code的input标签。.text()表示返回文本。</span></span><br><span class="line">或者</span><br><span class="line">response.doc(<span class="string">'div.title'</span>).text()  <span class="comment">#是上文的简写形式，表示class为title的div标签</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取这个图片的网址：<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/img.png" alt="src"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">picture = response.doc(<span class="string">'img.img-responsive'</span>).attr.src <span class="comment">#attr.src 表示属性中src的值。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>以下为我最终写的爬取落网歌单的Python代码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="comment">#Created on 2020-01-09 10:17:30</span></span><br><span class="line"><span class="comment">#Project: 999</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspider.libs.base_handler <span class="keyword">import</span> * </span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Handler</span><span class="params">(BaseHandler)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.base_url = <span class="string">'http://www.luoow.com/'</span></span><br><span class="line">        self.start = <span class="number">1</span></span><br><span class="line">        self.end = <span class="number">999</span></span><br><span class="line">    crawl_config = &#123;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">    @every(minutes=24 * 60)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_start</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.crawl(<span class="string">'http://www.luoow.com/'</span>, callback=self.index_page)</span><br><span class="line"><span class="meta">    @config(age=10 * 24 * 60 * 60)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index_page</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="keyword">while</span> self.start &lt;= self.end:</span><br><span class="line">            url = self.base_url + str(self.start)</span><br><span class="line">            print(url)</span><br><span class="line">            self.crawl(url, callback=self.detail_page, fetch_type= <span class="string">'js'</span>)  <span class="comment">#fetch_type= 'js' 表示打开有JS渲染的界面，本示例中的歌单均有JS，否则抓取不成功。</span></span><br><span class="line">            self.start += <span class="number">1</span></span><br><span class="line">    </span><br><span class="line"><span class="meta">    @config(priority=2)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">detail_page</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        songer_name= []</span><br><span class="line">        song_name = []</span><br><span class="line">        picture = response.doc(<span class="string">'img.img-responsive'</span>).attr.src</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> response.doc(<span class="string">'span[class = "skPlayer-list-author"]'</span>).items():  <span class="comment">#class 里面不能有空格</span></span><br><span class="line">            songer_name.append(each.text())</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> response.doc(<span class="string">'span[class = "skPlayer-list-name"]'</span>).items():</span><br><span class="line">            song_name.append(each.text()[<span class="number">4</span>:])</span><br><span class="line">        </span><br><span class="line">        song_count = len(song_name)</span><br><span class="line">        </span><br><span class="line">        all_song = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(song_count):</span><br><span class="line">            current_song = &#123;</span><br><span class="line">                <span class="string">"song_name"</span> : song_name[i],</span><br><span class="line">                <span class="string">"songer_name"</span> : songer_name[i]</span><br><span class="line">            &#125;</span><br><span class="line">            all_song.append(current_song)</span><br><span class="line">       </span><br><span class="line">        all = &#123;</span><br><span class="line">            <span class="string">"name"</span>: response.doc(<span class="string">'div.title'</span>).text(),</span><br><span class="line">            <span class="string">"song_count"</span>: song_count,</span><br><span class="line">            <span class="string">"introduction"</span> : response.doc(<span class="string">'div[class = "vol-desc"]'</span>).text(),</span><br><span class="line">            <span class="string">"img_url"</span> : picture,</span><br><span class="line">            <span class="string">"songs"</span> : all_song</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">r"E:\project\python\spider\999.txt"</span>, <span class="string">"a"</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f: <span class="comment"># 1. 一定要说明 utf-8 编码，否则会报错，无法正常显示非英文字符。 2. 读取方式为 "a" 表示为 不覆盖文件中。</span></span><br><span class="line">            f.write(json.dumps(all,ensure_ascii = <span class="keyword">False</span>))  <span class="comment">#ensure_ascii = False  在txt 中，使得中文可以正常显示</span></span><br><span class="line">            f.write(<span class="string">','</span>) <span class="comment">#在每个歌单之间加上 ‘，’号，以符合json格式。</span></span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> &#123;  <span class="comment">#return 的数据会返回到dashboard的results中</span></span><br><span class="line">            <span class="string">"name"</span>: response.doc(<span class="string">'div.title'</span>).text(),</span><br><span class="line">            <span class="string">"song_count"</span>: song_count,</span><br><span class="line">            <span class="string">"introduction"</span> : response.doc(<span class="string">'div[class = "vol-desc"]'</span>).text(),</span><br><span class="line">            <span class="string">"img_url"</span> : picture,</span><br><span class="line">            <span class="string">"songs"</span> : all_song</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>pyspider 支持在线调试并实时查看爬虫结果。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/debug.png" alt="debug"></p>
+<p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/debug2.png" alt="debug"><br>调试无误后，返回  <strong>pyspider dashboard</strong> 界面。</p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>调试完成后，将该项目的<code>CHECKING</code> 改为 <code>RUNNING</code>，并点击<code>Run</code>，pyspider 就开始爬虫工作了。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/running.png" alt="debug"><br>运行后<code>Results</code>中开始刷新数据，并且CMD窗口中也一直在显示爬取结果。</p>
+<p>各参数的含义为：</p>
+<ul>
+<li><p><code>rate/burst</code> 代表当前的爬取速率。rate 代表 1 秒发出多少个请求，burst 相当于流量控制中的令牌桶算法的令牌数，rate 和 burst 设置的越大，爬取速率越快，当然速率需要考虑本机性能和爬取过快被封的问题。</p>
+</li>
+<li><p><code>process</code> 中的 5m、1h、1d 指 的是最近 5 分、1 小时、1 天内的请求情况，all 代表所有的请求情况。</p>
+</li>
+<li><p><code>颜色</code>请求由不同颜色表示、蓝色的代表等待被执行的请求，绿色的代表成功的请求，黄色的代表请求失败后等待重试的请求，红色的代表失败次数过多而被忽略的请求，这样可以直观知道爬取的进度和请求情况。</p>
+</li>
+<li><p><code>Run</code> 爬虫运行的按钮。</p>
+</li>
+<li><code>Active Tasks</code> 可以看到任务进行的状态，比如爬到哪个网址了，以及是否爬取成功等。</li>
+<li><code>Results</code> 爬虫结果。</li>
+</ul>
+<h2 id="爬虫结果"><a href="#爬虫结果" class="headerlink" title="爬虫结果"></a>爬虫结果</h2><ul>
+<li><p>点击<code>Results</code>后查看，已经成功得到了所需要的信息。可以点击右上角进行保存。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/results.png" alt="Results"></p>
+</li>
+<li><p>txt文件。由于我的需求是将爬取结果以json格式保存为txt，故我在源码中使用write方法将爬虫结果保存下来：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">r"E:\project\python\spider\999.txt"</span>, <span class="string">"a"</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f: <span class="comment"># 1. 一定要说明 utf-8 编码，否则会报错，无法正常显示非英文字符。 2. 读取方式为 "a" 表示为 不覆盖文件中。</span></span><br><span class="line">            f.write(json.dumps(all,ensure_ascii = <span class="keyword">False</span>))  <span class="comment">#ensure_ascii = False  在txt 中，使得中文可以正常显示</span></span><br><span class="line">            f.write(<span class="string">','</span>) <span class="comment">#在每个歌单之间加上 ‘，’号，以符合json格式。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/txt999.png" alt="Results"><br><strong>注</strong>：为了符合json格式要求，[{…},{…},{…}]<br>需要手动修改，删除掉txt文件末尾的最后一个“，”，并在首尾处分别加上“[” “]”。</p>
+<h2 id="格式校验"><a href="#格式校验" class="headerlink" title="格式校验"></a>格式校验</h2><p>打开<a href="http://www.bejson.com/" target="_blank" rel="noopener">在线JSON校验格式化工具（Be JSON）</a><br>复制txt文件中的内容到该网站，点击<code>格式化校验</code>，可以看到所得到的json为正确格式。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/check.png" alt="Results"></p>
+<p>至此，已经成功爬取到了落网所有歌单的数据，并以正确的json格式保存在txt文件中。由于，此次不涉及数据库和反爬机制，暂不做赘述。</p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p>代码源码：<a href="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/code999.py" target="_blank" rel="noopener">点击下载源码</a></p>
+<p>csv: <a href="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/999.csv" target="_blank" rel="noopener">点击下载CSV文件</a><br> 注：关于CSV乱码问题的解决方案：<br> 单击该CSV文件，右键以记事本方式打开，另存为的时候将编码方式改为ANSI，再次打开显示正常。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/luoow/csv.png" alt="Results"></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] <a href="https://blog.csdn.net/weixin_37947156/article/details/76495144" target="_blank" rel="noopener">pyspider的使用</a><br>[2] <a href="https://www.w3school.com.cn/cssref/css_selectors.asp" target="_blank" rel="noopener">CSS 选择器参考手册</a><br>[3]  <a href="https://segmentfault.com/a/1190000002477913" target="_blank" rel="noopener">pyspider 爬虫教程（三）：使用 PhantomJS 渲染带 JS 的页面</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/November/" class="next-post btn btn-default" title="【吉他指弹】November">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【吉他指弹】November</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'eKSu1dU1EnS6hRhcryDVmhgq-gzGzoHsz',
+            appKey: 'rnWgDAT2CH16DAKw6L9or4MG',
+            placeholder: '说点什么吧，强烈建议留下昵称和邮箱。有回复就可以邮件提醒你~~(￣▽￣)~*',
+            notify: true,
+            verify: true,
+            avatar: 'monsterid',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#环境搭建"><span class="toc-text">环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pyspider-介绍"><span class="toc-text">pyspider 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统环境"><span class="toc-text">系统环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#爬虫实例"><span class="toc-text">爬虫实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#新建任务"><span class="toc-text">新建任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码编写与调试"><span class="toc-text">代码编写与调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行"><span class="toc-text">运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#爬虫结果"><span class="toc-text">爬虫结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式校验"><span class="toc-text">格式校验</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#附录"><span class="toc-text">附录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文献"><span class="toc-text">参考文献</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019 longyating
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
+
+
+
