@@ -16,11 +16,10 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="Java">
+    <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="解决IDEA中Spring Boot启动报错Application startup failed
-报错内容：1ERROR 17040 [main] o.s.boot.SpringApplicat...">
+    <meta name="description" content="Problem: 有一个数组a，找aj减ai的最大值，且满足j大于i？返回该最大值，以及对应的i，j下标。要求是时间复杂度O(n),空间复杂度O(1)。Solution:题目的要求是时间复杂度O...">
 
 
 
@@ -32,7 +31,7 @@
     <!--Title-->
 
 
-<title>【Java】解决IDEA中Spring Boot启动报错Application startup failed | 龙娅婷</title>
+<title>Problem1 | 龙娅婷</title>
 
 
     <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
@@ -153,16 +152,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="【Java】解决IDEA中Spring Boot启动报错Application startup failed">
+        <h1 id="Problem1">
             
-	            【Java】解决IDEA中Spring Boot启动报错Application startup failed
+	            Problem1
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/充电学习/">充电学习</a>
+            <a class="category-link" href="/categories/有趣的题/">有趣的题</a>
         </span>
     
 
@@ -170,8 +169,6 @@
         <span class="fa-wrap">
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
-                
-                    <a class="tag-link" href="/tags/Java/">Java</a>
                 
             </span>
         </span>
@@ -181,7 +178,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/10/06</span>
+            <span class="date-meta">2020/02/06</span>
         </span>
         
     
@@ -191,19 +188,9 @@
     </div>
     
     <div class="post-body post-content">
-        <p>解决IDEA中Spring Boot启动报错Application startup failed</p>
-<h2 id="报错内容："><a href="#报错内容：" class="headerlink" title="报错内容："></a>报错内容：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 17040 [main] o.s.boot.SpringApplication : Application startup failed</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p><strong>原因：工程要求的JDK版本与环境所配置的JDK版本不同所致。</strong></p>
-<p>pom.xml文件中所要求的为 1.8</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&lt;properties&gt;</span><br><span class="line">		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">		&lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">&lt;/properties&gt;&#125;</span><br></pre></td></tr></table></figure>
-<p>导入工程后，查看默认的JDK，更改为1.8</p>
-<ol>
-<li><p>路径为 File -&gt; Project Structure -&gt;Platform Settings -&gt;SDKs 点击”+”号，添加版本为1.8的JDK所在的根目录<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/IDEA/add_JDK.jpg" alt></p>
-</li>
-<li><p>修改Project SDK 和Module SDK 为1.8<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/IDEA/change_JDK.jpg" alt><br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/IDEA/change2_JDK.jpg" alt></p>
-</li>
-</ol>
+        <p><strong>Problem:</strong> 有一个数组a，找aj减ai的最大值，且满足j大于i？返回该最大值，以及对应的i，j下标。要求是时间复杂度O(n),空间复杂度O(1)。<br><strong>Solution:</strong><br>题目的要求是时间复杂度O(n),空间复杂度O(1).</p>
+<p>两个错误的思路要避免，一是数组排序，最好的排序算法时间复杂度也是nlogn,明显达不到要求。另外一个是遍历数组求得最大值和最小值，然后相减，但照顾不到i&lt;=j的条件。</p>
+<p>正确的思路是对上述第二个算法的改进，将数组第一个元素设置为最大和最小值（i=j=0），最大差值的初始值max就是0，然后移动j，每次移动都计算a[j]-a[i]，如果结果大于max就替换max，小于的话什么都不做，而如果结果小于0，则将i赋值为j，继续上面的操作。最终得到的结果就是正确答案。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">        <span class="keyword">int</span> a[] = &#123;<span class="number">6</span>,<span class="number">18</span>,<span class="number">3</span>,<span class="number">98</span>,<span class="number">67</span>,<span class="number">24</span>,<span class="number">0</span>,<span class="number">43</span>,<span class="number">17</span>,<span class="number">17</span>,<span class="number">67</span>,<span class="number">81</span>,<span class="number">49</span>,-<span class="number">15</span>,<span class="number">9</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span>[] maxArr = max(a);</span><br><span class="line">		System.out.println(maxArr[<span class="number">0</span>]);</span><br><span class="line">        System.out.println(maxArr[<span class="number">1</span>]);</span><br><span class="line">        System.out.println(maxArr[<span class="number">2</span>]);</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] max(<span class="keyword">int</span>[] arr)&#123;</span><br><span class="line">            <span class="keyword">int</span> result = arr[<span class="number">0</span>] - arr[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span>[] resultArr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>]; </span><br><span class="line">            <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> resultI = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> resultJ = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(j=<span class="number">1</span>; j&lt; arr.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(arr[j]- arr[i]&gt;result)&#123;</span><br><span class="line">                    result = arr[j]- arr[i];</span><br><span class="line">                    resultI = i;</span><br><span class="line">                    resultJ = j;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr[j]- arr[i] &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                    i = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        resultArr[<span class="number">0</span>] = result;</span><br><span class="line">        resultArr[<span class="number">1</span>] = resultI;</span><br><span class="line">        resultArr[<span class="number">2</span>] = resultJ;</span><br><span class="line">        <span class="keyword">return</span> resultArr;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
     </div>
     
@@ -221,15 +208,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/dieLianHua/" class="pre-post btn btn-default" title="【吉他指弹】蝶恋花">
+        <a href="/Problem2/" class="pre-post btn btn-default" title="Problem2">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【吉他指弹】蝶恋花</span>
+            <span class="hidden-xs">Problem2</span>
         </a>
     
     
-        <a href="/798/" class="next-post btn btn-default" title="798">
+        <a href="/pyspider/" class="next-post btn btn-default" title="使用Pyspider爬虫网站数据">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">798</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">使用Pyspider爬虫网站数据</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -272,7 +259,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#报错内容："><span class="toc-text">报错内容：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法："><span class="toc-text">解决方法：</span></a></li></ol>
+            <p>暂无目录</p>
         
     </div>
 </aside>
