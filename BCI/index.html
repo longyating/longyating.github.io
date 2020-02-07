@@ -36,7 +36,7 @@
     <!--Title-->
 
 
-<title>用意念播放音乐 | 龙娅婷</title>
+<title>基于脑机接口技术实现意念播放音乐 | 龙娅婷</title>
 
 
     <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
@@ -69,7 +69,7 @@
 
     
 
-<script src="/assets/js/DPlayer.min.js"></script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"></head>
+<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
 
 </html>
 <!--[if lte IE 8]>
@@ -157,9 +157,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="用意念播放音乐">
+        <h1 id="基于脑机接口技术实现意念播放音乐">
             
-	            用意念播放音乐
+	            基于脑机接口技术实现意念播放音乐
             
         </h1>
         <div class="post-meta">
@@ -212,7 +212,7 @@
 <p>(3)    <strong>神经网络训练：</strong>创建BP神经网络，用带标签的样本数据训练BP神经网络模型的参数权值。<br>　　输入层神经元个数：特征提取采用基于脑电信号求熵值的方法，得到6组熵值，因此网络的输入层神经元个数为 6 个。<br>　　输出层神经元个数：BP神经网络输出层的神经元个数依据所需要识别的特征确定，输出层神经元个数确定为1。<br>　　隐含层层数：３。<br>　　隐含层神经元个数：采用经验公式与实验相结合的方式来确定。对于由m 个输入神经元、 n 个输出神经元的神经网络，其隐含层神经元的个数可以根据如下经验公式进行确定，隐含层神经个数确定为13。<br>$$h=\sqrt{(n+m)+a},  a∈[1,10]$$</p>
 <p>(4)    <strong>网络测试验证：</strong>将特征熵值数据的测试集，载入已经训练好的BP神经网络对其进行测试，最后将预测输出结果与实际期待结果进行仿真对比，进而检查网络对其分类的正确性。由于A组与B组想象的是相反的运动，所以测试集经过神经网络后应得到相反的结果。若测试集的准确率较低，则增加采集脑电波信号，增加训练集数据量，采集大量的脑电信号重新训练网络。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/BCI/xunlian.png" alt="训练结果"></p>
 <p>(5) <strong>人机交互：</strong>想象抬左手对应播放音乐，右手反之。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b = Bluetooth(<span class="string">'HUAWEI AM08'</span>,3); <span class="comment">#创建蓝牙串口对象</span></span><br><span class="line">[y,Fs] = audioread(<span class="string">'D:\Music\我和我的祖国.mp3'</span>); <span class="comment">#创建音乐对象       </span></span><br><span class="line">fopen(b); <span class="comment">#打开蓝牙</span></span><br><span class="line">sound(y,Fs); <span class="comment">#播放音乐</span></span><br></pre></td></tr></table></figure></p>
-<div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"theme":"#FADFA3","loop":true,"video":{"url":"https://hexofile.oss-cn-beijing.aliyuncs.com/BCI/3s.mp4","pic":"https://hexofile.oss-cn-beijing.aliyuncs.com/BCI/fengmian.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://hexofile.oss-cn-beijing.aliyuncs.com/BCI/3s.mp4","pic":"https://hexofile.oss-cn-beijing.aliyuncs.com/BCI/fengmian.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>成功用意念控制外设，完成预期目标。缺陷是只能实现简单二分类，网络功能简单。</p>
 
     </div>
