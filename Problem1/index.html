@@ -19,9 +19,9 @@
     <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="Problem:有一个数组a，找aj减ai的最大值，且满足j大于i？返回该最大值，以及对应的i，j下标。要求是时间复杂度O(n),空间复杂度O(1)。
+    <meta name="description" content="Problem有一个数组a，找aj减ai的最大值，且满足j大于i？返回该最大值，以及对应的i，j下标。要求是时间复杂度O(n),空间复杂度O(1)。
 
-Solution:题目的要求是时间复杂度...">
+Solution题目的要求是时间复杂度O(...">
 
 
 
@@ -33,7 +33,7 @@ Solution:题目的要求是时间复杂度...">
     <!--Title-->
 
 
-<title>Problem1 | 龙娅婷</title>
+<title>Problem1 找aj减ai的最大值 | 龙娅婷</title>
 
 
     <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
@@ -154,9 +154,9 @@ Solution:题目的要求是时间复杂度...">
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="Problem1">
+        <h1 id="Problem1 找aj减ai的最大值">
             
-	            Problem1
+	            Problem1 找aj减ai的最大值
             
         </h1>
         <div class="post-meta">
@@ -190,9 +190,9 @@ Solution:题目的要求是时间复杂度...">
     </div>
     
     <div class="post-body post-content">
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem:"></a>Problem:</h2><p>有一个数组a，找aj减ai的最大值，且满足j大于i？返回该最大值，以及对应的i，j下标。要求是时间复杂度O(n),空间复杂度O(1)。</p>
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>有一个数组a，找aj减ai的最大值，且满足j大于i？返回该最大值，以及对应的i，j下标。要求是时间复杂度O(n),空间复杂度O(1)。</p>
 <hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h2><p>题目的要求是时间复杂度O(n),空间复杂度O(1)。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>题目的要求是时间复杂度O(n),空间复杂度O(1)。</p>
 <p>两个错误的思路要避免，一是数组排序，最好的排序算法时间复杂度也是nlogn,明显达不到要求。另外一个是遍历数组求得最大值和最小值，然后相减，但照顾不到i&lt;=j的条件。</p>
 <p>正确的思路是对上述第二个算法的改进，将数组第一个元素设置为最大和最小值（i=j=0），最大差值的初始值max就是0，然后移动j，每次移动都计算a[j]-a[i]，如果结果大于max就替换max，小于的话什么都不做，而如果结果小于0，则将i赋值为j，继续上面的操作。最终得到的结果就是正确答案。</p>
 <hr>
@@ -213,9 +213,9 @@ Solution:题目的要求是时间复杂度...">
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/Problem2/" class="pre-post btn btn-default" title="Problem2">
+        <a href="/Problem2/" class="pre-post btn btn-default" title="Problem2 随机数生成器">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">Problem2</span>
+            <span class="hidden-xs">Problem2 随机数生成器</span>
         </a>
     
     
@@ -264,7 +264,7 @@ Solution:题目的要求是时间复杂度...">
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Problem"><span class="toc-text">Problem:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-text">Code</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Problem"><span class="toc-text">Problem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-text">Code</span></a></li></ol>
         
     </div>
 </aside>
