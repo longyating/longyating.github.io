@@ -16,16 +16,10 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="LTE">
+    <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="关系RLC-(逻辑信道)-&gt;MAC-(传输信道)-&gt;物理层-(物理信道)
-映射关系图
-
-
-
-逻辑信道下行(4个控制信道+1个业务信道)
-BCCH: 广播控制信道 Broadcast ...">
+    <meta name="description" content="Map.entrySet() 这个方法返回的是一个Set&lt;Map.Entry&lt;K,V&gt;&gt;，Map.Entry 是Map中的一个接口，他的用途是表示一个映射项（里面有Key...">
 
 
 
@@ -37,7 +31,7 @@ BCCH: 广播控制信道 Broadcast ...">
     <!--Title-->
 
 
-<title>LTE信道汇总 | 龙娅婷</title>
+<title>遍历map的四种方法 | 龙娅婷</title>
 
 
     <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
@@ -158,16 +152,16 @@ BCCH: 广播控制信道 Broadcast ...">
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="LTE信道汇总">
+        <h1 id="遍历map的四种方法">
             
-	            LTE信道汇总
+	            遍历map的四种方法
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/充电学习/">充电学习</a>
+            <a class="category-link" href="/categories/有趣的题/">有趣的题</a>
         </span>
     
 
@@ -175,8 +169,6 @@ BCCH: 广播控制信道 Broadcast ...">
         <span class="fa-wrap">
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
-                
-                    <a class="tag-link" href="/tags/LTE/">LTE</a>
                 
             </span>
         </span>
@@ -186,65 +178,19 @@ BCCH: 广播控制信道 Broadcast ...">
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/03/06</span>
+            <span class="date-meta">2020/02/06</span>
         </span>
         
     
 </div>
             
             
-            <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>338</strong>天之前发表，文中内容可能已经过时。
-            </p>
-        
     </div>
     
     <div class="post-body post-content">
-        <h2 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h2><p><strong>RLC</strong>-(<code>逻辑信道</code>)-&gt;<strong>MAC</strong>-(<code>传输信道</code>)-&gt;<strong>物理层</strong>-(<code>物理信道</code>)</p>
-<h2 id="映射关系图"><a href="#映射关系图" class="headerlink" title="映射关系图"></a>映射关系图</h2><p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/xinDao/uplink.png" alt="uplink"></p>
-<hr>
-<p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/xinDao/downlink.png" alt="downlink"></p>
-<hr>
-<h2 id="逻辑信道"><a href="#逻辑信道" class="headerlink" title="逻辑信道"></a>逻辑信道</h2><h3 id="下行-4个控制信道-1个业务信道"><a href="#下行-4个控制信道-1个业务信道" class="headerlink" title="下行(4个控制信道+1个业务信道)"></a>下行(4个控制信道+1个业务信道)</h3><ul>
-<li><strong>BCCH: 广播控制信道 Broadcast Control Channel</strong></li>
-<li><strong>PCCH: 寻呼控制信道 Paging Control Channel</strong></li>
-<li><strong>CCCH: 公共控制信道 Common Control Channel</strong></li>
-<li><strong>DCCH: 专用控制信道 Delicated Control Channel</strong></li>
-<li><strong>DTCH: 专用业务信道 Delicated traffic Channel</strong>（<code>业务</code>）</li>
-</ul>
-<h3 id="上行-是下行中信道的一部分"><a href="#上行-是下行中信道的一部分" class="headerlink" title="上行(是下行中信道的一部分)"></a>上行(是下行中信道的一部分)</h3><ul>
-<li><strong>CCCH: 公共控制信道 Common Control Channel</strong></li>
-<li><strong>DCCH: 专用控制信道 Delicated Control Channel</strong></li>
-<li><strong>DTCH: 专用业务信道 Delicated Traffic Channel</strong>（<code>业务</code>）</li>
-</ul>
-<hr>
-<h2 id="传输信道"><a href="#传输信道" class="headerlink" title="传输信道"></a>传输信道</h2><h3 id="下行"><a href="#下行" class="headerlink" title="下行"></a>下行</h3><ul>
-<li><strong>BCH: 广播信道 Broadcast Channel</strong></li>
-<li><strong>PCH: 寻呼信道 Paging Channel</strong></li>
-<li><strong>DL-SCH: 下行共享信道 Downlink Share Channel</strong></li>
-</ul>
-<h3 id="上行"><a href="#上行" class="headerlink" title="上行"></a>上行</h3><ul>
-<li><strong>RACH: 随机接入信道 Random Access Channel</strong></li>
-<li><strong>UL-SCH: 上行共享信道 Uplink Share Channel</strong></li>
-</ul>
-<hr>
-<h2 id="物理信道"><a href="#物理信道" class="headerlink" title="物理信道"></a>物理信道</h2><h3 id="下行-4个控制信道-1个业务信道-1"><a href="#下行-4个控制信道-1个业务信道-1" class="headerlink" title="下行(4个控制信道+1个业务信道)"></a>下行(4个控制信道+1个业务信道)</h3><ul>
-<li><p><strong>PBCH: 物理广播信道 Physical Broadcast Channel</strong><br>基站广播终端UE接入系统所必需的关键系统信息，如下行带宽、PHICH的格式、天线端口数量等内容。这些内容称为<strong>MIB</strong>(主信息块，Master Information Block)<br><strong>注意</strong>：PBCH只广播系统最重要的信息，其他的系统信息通过PDSCH来传达。</p>
-</li>
-<li><p><strong>PCFICH: 物理控制格式指示信道 Physical Control Format Indicator Channel</strong><br>PCFICH把PBCH的内容又细分了一下，专门广播其中非常关键的子帧格式信息，这里说的子帧格式信息指的是一个子帧中可以用来承载下行控制信道的OFDM符号数目，也就是控制区的大小。承载的内容称为 <strong>CFI</strong>(格式控制指示，Control Format Indicator)。</p>
-</li>
-<li><p><strong>PHICH: 物理HARQ指示信道 Physical Hybrid-ARQ Indicator Channel</strong><br>基站eNB使用PHICH向终端UE反馈与上行HARQ相关的ACK/NACK信息。承载的内容称为<strong>HI</strong>(HFARQ指示，HARQ Indicator)</p>
-</li>
-<li><p><strong>PDCCH: 物理下行控制信道 Physical Downlink Control Channel</strong><br>基站eNB使用PDCCH发送与业务调度相关的信息。比如，与下行方向上PDSCH相关的传输格式、资源分配、功率控制等信息。承载的内容称为 <strong>DCI</strong>(Donwlinl Control Information)。非常重要的概念。</p>
-</li>
-<li><p><strong>PDSCH: 物理下行共享信道 Physical Downlink Shared Channel</strong>（<code>业务</code>）</p>
-</li>
-</ul>
-<h3 id="上行-2个控制信道-1个业务信道"><a href="#上行-2个控制信道-1个业务信道" class="headerlink" title="上行(2个控制信道+1个业务信道)"></a>上行(2个控制信道+1个业务信道)</h3><ul>
-<li><strong>PRACH: 物理随机接入信道 Physical Random Access Channel</strong><br>用来通知基站(eNB)有终端(UE)需要接入。</li>
-<li><strong>PUCCH: 物理上行控制信道 Physical Uplink Control Channel</strong><br>用于发送与上行调度相关的信息，如调度请求（Scheduling Request , SR）、HARQ 反馈，以及信道状况信息（Channel Status Information ,CSI）。承载的内容称为<strong>UCI</strong>(Uplink Control Information)</li>
-<li><strong>PUSCH: 物理上行共享信道 Physical Uplink Share Channel</strong>（<code>业务</code>）</li>
-</ul>
+        <p><strong>Map.entrySet()</strong> 这个方法返回的是一个Set&lt;Map.Entry&lt;K,V&gt;&gt;，Map.Entry 是Map中的一个接口，他的用途是表示一个映射项（里面有Key和Value），而Set&lt;Map.Entry&lt;K,V&gt;&gt;表示一个映射项的Set。Map.Entry里有相应的getKey和getValue方法，即JavaBean，让我们能够从一个项中取出Key和Value。</p>
+<p>下面是遍历Map的四种方法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">  map.put(<span class="string">"1"</span>, <span class="string">"value1"</span>);</span><br><span class="line">  map.put(<span class="string">"2"</span>, <span class="string">"value2"</span>);</span><br><span class="line">  map.put(<span class="string">"3"</span>, <span class="string">"value3"</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//第一种：普遍使用，二次取值</span></span><br><span class="line">  System.out.println(<span class="string">"通过Map.keySet遍历key和value："</span>);</span><br><span class="line">  <span class="keyword">for</span> (String key : map.keySet()) &#123;</span><br><span class="line">   System.out.println(<span class="string">"key= "</span>+ key + <span class="string">" and value= "</span> + map.get(key));</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//第二种</span></span><br><span class="line">  System.out.println(<span class="string">"通过Map.entrySet使用iterator遍历key和value："</span>);</span><br><span class="line">  Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = map.entrySet().iterator();</span><br><span class="line">  <span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">   Map.Entry&lt;String, String&gt; entry = it.next();</span><br><span class="line">   System.out.println(<span class="string">"key= "</span> + entry.getKey() + <span class="string">" and value= "</span> + entry.getValue());</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//第三种：推荐，尤其是容量大时</span></span><br><span class="line">  System.out.println(<span class="string">"通过Map.entrySet遍历key和value"</span>);</span><br><span class="line">  <span class="keyword">for</span> (Map.Entry&lt;String, String&gt; entry : map.entrySet()) &#123;</span><br><span class="line">   System.out.println(<span class="string">"key= "</span> + entry.getKey() + <span class="string">" and value= "</span> + entry.getValue());</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="comment">//第四种</span></span><br><span class="line">  System.out.println(<span class="string">"通过Map.values()遍历所有的value，但不能遍历key"</span>);</span><br><span class="line">  <span class="keyword">for</span> (String v : map.values()) &#123;</span><br><span class="line">   System.out.println(<span class="string">"value= "</span> + v);</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p> 参考文献：<a href="https://blog.csdn.net/gm371200587/article/details/82108372" target="_blank" rel="noopener">https://blog.csdn.net/gm371200587/article/details/82108372</a></p>
 
     </div>
     
@@ -262,15 +208,15 @@ BCCH: 广播控制信道 Broadcast ...">
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/myHeartWillGoOn/" class="pre-post btn btn-default" title="【古典吉他】My Heart Will Go On">
+        <a href="/Array2List/" class="pre-post btn btn-default" title="Array List set">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【古典吉他】My Heart Will Go On</span>
+            <span class="hidden-xs">Array List set</span>
         </a>
     
     
-        <a href="/大鱼/" class="next-post btn btn-default" title="【吉他指弹】大鱼">
+        <a href="/private/" class="next-post btn btn-default" title="Java中的访问修饰符">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">【吉他指弹】大鱼</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">Java中的访问修饰符</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -313,7 +259,7 @@ BCCH: 广播控制信道 Broadcast ...">
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关系"><span class="toc-text">关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#映射关系图"><span class="toc-text">映射关系图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑信道"><span class="toc-text">逻辑信道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下行-4个控制信道-1个业务信道"><span class="toc-text">下行(4个控制信道+1个业务信道)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上行-是下行中信道的一部分"><span class="toc-text">上行(是下行中信道的一部分)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传输信道"><span class="toc-text">传输信道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下行"><span class="toc-text">下行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上行"><span class="toc-text">上行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#物理信道"><span class="toc-text">物理信道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下行-4个控制信道-1个业务信道-1"><span class="toc-text">下行(4个控制信道+1个业务信道)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上行-2个控制信道-1个业务信道"><span class="toc-text">上行(2个控制信道+1个业务信道)</span></a></li></ol></li></ol>
+            <p>暂无目录</p>
         
     </div>
 </aside>
