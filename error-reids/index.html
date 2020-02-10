@@ -19,8 +19,9 @@
     <meta name="keywords" content="Java">
 
 
-    <meta name="description" content="报错内容：发生异常WRONGTYPE Operation against a key holding the wrong kind of value
-解决方法： 原因：redis 存储的数据类型...">
+    <meta name="description" content="报错内容发生异常WRONGTYPE Operation against a key holding the wrong kind of value
+
+解决方法 原因：redis 存储的数据类型与...">
 
 
 
@@ -191,8 +192,9 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="报错内容：发生异常WRONGTYPE-Operation-against-a-key-holding-the-wrong-kind-of-value"><a href="#报错内容：发生异常WRONGTYPE-Operation-against-a-key-holding-the-wrong-kind-of-value" class="headerlink" title="报错内容：发生异常WRONGTYPE Operation against a key holding the wrong kind of value"></a>报错内容：发生异常WRONGTYPE Operation against a key holding the wrong kind of value</h2><hr>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p><strong> 原因：redis 存储的数据类型与所用方法要求的类型不一致 </strong></p>
+        <h2 id="报错内容"><a href="#报错内容" class="headerlink" title="报错内容"></a>报错内容</h2><p>发生异常WRONGTYPE Operation against a key holding the wrong kind of value</p>
+<hr>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p><strong> 原因：redis 存储的数据类型与所用方法要求的类型不一致 </strong></p>
 <ol>
 <li><p>首先CMD，连接redis服务，进入到指定数据库，查看所存储的数据类型。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/IDEA/redis_cmd.png" alt><br>可以看到FOLLOWEE 和 FOLLOWER 类型为zset，LKE类型为set。</p>
 </li>
@@ -263,7 +265,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#报错内容：发生异常WRONGTYPE-Operation-against-a-key-holding-the-wrong-kind-of-value"><span class="toc-text">报错内容：发生异常WRONGTYPE Operation against a key holding the wrong kind of value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法："><span class="toc-text">解决方法：</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#报错内容"><span class="toc-text">报错内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法"><span class="toc-text">解决方法</span></a></li></ol>
         
     </div>
 </aside>
