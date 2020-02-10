@@ -16,15 +16,11 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="关键字">
+    <meta name="keywords" content="Java">
 
 
-    <meta name="description" content="　　　　有没有那样一天，可以用大脑的意念来做一些事情，比如播放音乐，打开门等。用看不见的脑电波来控制设备，是不是很神奇。
-功能用意念打开音响并播放一段音乐
-工具
-脑立方蓝牙传感器
-电脑
-蓝牙音箱...">
+    <meta name="description" content="报错内容：发生异常WRONGTYPE Operation against a key holding the wrong kind of value
+解决方法： 原因：redis 存储的数据类型...">
 
 
 
@@ -36,7 +32,7 @@
     <!--Title-->
 
 
-<title>基于脑机接口技术实现意念播放音乐 | 龙娅婷</title>
+<title>【Java解决报错】发生异常WRONGTYPE Operation against a key holding the wrong kind of value | 龙娅婷</title>
 
 
     <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
@@ -69,7 +65,7 @@
 
     
 
-<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
+</head>
 
 </html>
 <!--[if lte IE 8]>
@@ -157,9 +153,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="基于脑机接口技术实现意念播放音乐">
+        <h1 id="【Java解决报错】发生异常WRONGTYPE Operation against a key holding the wrong kind of value">
             
-	            基于脑机接口技术实现意念播放音乐
+	            【Java解决报错】发生异常WRONGTYPE Operation against a key holding the wrong kind of value
             
         </h1>
         <div class="post-meta">
@@ -175,6 +171,8 @@
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
+                    <a class="tag-link" href="/tags/Java/">Java</a>
+                
             </span>
         </span>
     
@@ -183,7 +181,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/11/15</span>
+            <span class="date-meta">2020/02/10</span>
         </span>
         
     
@@ -193,27 +191,15 @@
     </div>
     
     <div class="post-body post-content">
-        <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>　　<br>　　有没有那样一天，可以用大脑的意念来做一些事情，比如播放音乐，打开门等。用看不见的脑电波来控制设备，是不是很神奇。<br><a id="more"></a></p>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>用意念打开音响并播放一段音乐</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
-<li>脑立方蓝牙传感器</li>
-<li>电脑</li>
-<li>蓝牙音箱</li>
-<li>Matlab软件</li>
-</ul>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/BCI/liucheng.png" alt="流程图"></p>
-<blockquote>
-<p>方案流程图</p>
-</blockquote>
-<p>　　通过BCI脑-机接口技术以及BP神经网络算法，实现对脑电信号的数据采集、特征熵值提取、分析处理以及对外部设备的控制，整体方案设计流程为：</p>
-<p>(1)    <strong>脑电信号数据：</strong>基于脑电信号模式识别的远程遥控应用是对想象左右手运动（对应蓝牙音箱连接或断开）的二分类问题。首先采集受试者的脑电信号数据，共采集两组脑电信号数据：A组为想象左手运动（蓝牙音箱连接），B组为想象右手运动（蓝牙音箱断开）。</p>
-<p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/BCI/xinhao.png" alt="采集的样本信号"></p>
-<p>(2)    <strong>信号特征熵值提取：</strong>将脑电信号alpha波、beta波和gamma波进行数据归一化处理。其中alpha波与放松和冥想状态有关，beta波与思想专注状态有关，gamma波与某些感应的记忆相关的状态有关。将提取到的脑电波数据（三种波形各两组，共六组）分别进行熵值运算得到特征值矩阵。把熵值作为神经网络的输入，确定神经网络的预期输出，基于其特征熵值矩阵进行神经网络训练，确定神经网络的模型参数。</p>
-<p>(3)    <strong>神经网络训练：</strong>创建BP神经网络，用带标签的样本数据训练BP神经网络模型的参数权值。<br>　　输入层神经元个数：特征提取采用基于脑电信号求熵值的方法，得到6组熵值，因此网络的输入层神经元个数为 6 个。<br>　　输出层神经元个数：BP神经网络输出层的神经元个数依据所需要识别的特征确定，输出层神经元个数确定为1。<br>　　隐含层层数：３。<br>　　隐含层神经元个数：采用经验公式与实验相结合的方式来确定。对于由m 个输入神经元、 n 个输出神经元的神经网络，其隐含层神经元的个数可以根据如下经验公式进行确定，隐含层神经个数确定为13。<br>$$h=\sqrt{(n+m)+a},  a∈[1,10]$$</p>
-<p>(4)    <strong>网络测试验证：</strong>将特征熵值数据的测试集，载入已经训练好的BP神经网络对其进行测试，最后将预测输出结果与实际期待结果进行仿真对比，进而检查网络对其分类的正确性。由于A组与B组想象的是相反的运动，所以测试集经过神经网络后应得到相反的结果。若测试集的准确率较低，则增加采集脑电波信号，增加训练集数据量，采集大量的脑电信号重新训练网络。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/BCI/xunlian.png" alt="训练结果"></p>
-<p>(5) <strong>人机交互：</strong>想象抬左手对应播放音乐，右手反之。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b = Bluetooth(<span class="string">'HUAWEI AM08'</span>,3); <span class="comment">#创建蓝牙串口对象</span></span><br><span class="line">[y,Fs] = audioread(<span class="string">'D:\Music\我和我的祖国.mp3'</span>); <span class="comment">#创建音乐对象       </span></span><br><span class="line">fopen(b); <span class="comment">#打开蓝牙</span></span><br><span class="line">sound(y,Fs); <span class="comment">#播放音乐</span></span><br></pre></td></tr></table></figure></p>
-<div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"theme":"#FADFA3","loop":true,"video":{"url":"https://hexofile.oss-cn-beijing.aliyuncs.com/BCI/3s.mp4","pic":"https://hexofile.oss-cn-beijing.aliyuncs.com/BCI/fengmian.png"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>成功用意念控制外设，完成预期目标。缺陷是只能实现简单二分类，网络功能简单。</p>
+        <h2 id="报错内容：发生异常WRONGTYPE-Operation-against-a-key-holding-the-wrong-kind-of-value"><a href="#报错内容：发生异常WRONGTYPE-Operation-against-a-key-holding-the-wrong-kind-of-value" class="headerlink" title="报错内容：发生异常WRONGTYPE Operation against a key holding the wrong kind of value"></a>报错内容：发生异常WRONGTYPE Operation against a key holding the wrong kind of value</h2><hr>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p><strong> 原因：redis 存储的数据类型与所用方法要求的类型不一致 </strong></p>
+<ol>
+<li><p>首先CMD，连接redis服务，进入到指定数据库，查看所存储的数据类型。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/IDEA/redis_cmd.png" alt><br>可以看到FOLLOWEE 和 FOLLOWER 类型为zset，LKE类型为set。</p>
+</li>
+<li><p>查看到数据类型之后，在调用Jedis的地方检查下，所用的命令是不是与类型匹配。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/IDEA/redis_cmd2.png" alt><br>可以看到这里的scard是错误使用在zset类型上，应改为zcard。<br>正确如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getFolloweeCount</span><span class="params">(<span class="keyword">int</span> userId, <span class="keyword">int</span> entityType)</span></span>&#123;</span><br><span class="line">        String followeeKey = RedisKeyUtil.getFolloweeKey(userId,entityType);</span><br><span class="line">        <span class="keyword">return</span> jedisAdapter.zcard(followeeKey);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
     </div>
     
@@ -231,15 +217,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/November/" class="pre-post btn btn-default" title="【吉他指弹】November">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【吉他指弹】November</span>
-        </a>
     
-    
-        <a href="/dieLianHua/" class="next-post btn btn-default" title="【吉他指弹】蝶恋花">
+        <a href="/map/" class="next-post btn btn-default" title="遍历map的四种方法">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">【吉他指弹】蝶恋花</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">遍历map的四种方法</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -282,7 +263,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#功能"><span class="toc-text">功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-text">工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#报错内容：发生异常WRONGTYPE-Operation-against-a-key-holding-the-wrong-kind-of-value"><span class="toc-text">报错内容：发生异常WRONGTYPE Operation against a key holding the wrong kind of value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法："><span class="toc-text">解决方法：</span></a></li></ol>
         
     </div>
 </aside>
