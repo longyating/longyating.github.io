@@ -16,7 +16,7 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="关键字">
+    <meta name="keywords" content="数据结构与算法">
 
 
     <meta name="description" content="总图稳定性：当序列中存在两个或两个以上的关键字相等的时候，如果排序前序列中1领先于2,那么排序后1如果仍旧领先2的话，则是稳定的。（相等的元素排序后相对位置不变）
@@ -171,6 +171,8 @@
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
+                    <a class="tag-link" href="/tags/数据结构与算法/">数据结构与算法</a>
+                
             </span>
         </span>
     
@@ -200,7 +202,7 @@
 <h2 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h2><p>计数排序是一种适合于最大值和最小值的差值不是不是很大的排序。<br>基本思想：就是把数组元素作为数组的下标，然后用一个临时数组统计该元素出现的次数，例如 temp[i] = m, 表示元素 i 一共出现了 m 次。最后再把临时数组统计的数据从小到大汇总起来，此时汇总起来是数据是有序的。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/algorithm/countSort.gif" alt></p>
 <h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><p>1、桶排序就是把最大值和最小值之间的数进行瓜分，例如分成  10 个区间，10个区间对应10个桶，我们把各元素放到对应区间的桶中去<br>2、再对每个桶中的数进行排序，可以采用归并排序，也可以采用快速排序之类的。<br>之后每个桶里面的数据就是有序的了，我们在进行合并汇总。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/algorithm/BucketSort.webp" alt></p>
 <h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><p>1、先以个位数的大小来对数据进行排序，接着以十位数的大小来对数进行排序，接着以百位数的大小……<br>2、排到最后，就是一组有序的元素了。不过，他在以某位数进行排序的时候，是用“桶”来排序的。<br>由于某位数（个位/十位….，不是一整个数）的大小范围为0-9，所以我们需要10个桶，然后把具有相同数值的数放进同一个桶里，之后再把桶里的数按照0号桶到9号桶的顺序取出来，这样一趟下来，按照某位数的排序就完成了<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/algorithm/radioSort.gif" alt></p>
-<p>参考文献<br><a href="https://mp.weixin.qq.com/s/mq2NSG3xMqIs28nU354TjQ" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/mq2NSG3xMqIs28nU354TjQ</a><br><a href="https://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/sort-algorithm-summary.html</a></p>
+<p>参考文献<br><a href="https://mp.weixin.qq.com/s/mq2NSG3xMqIs28nU354TjQ" target="_blank" rel="noopener">必学十大经典排序算法，看这篇就够了</a><br><a href="https://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">菜鸟网站排序算法总结</a><br><a href="https://cuijiahua.com/blog/2018/01/algorithm_6.html" target="_blank" rel="noopener">Jack Cui 堆排序</a></p>
 
     </div>
     
