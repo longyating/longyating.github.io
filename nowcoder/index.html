@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="龙娅婷">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="关键字">
+
+
+    <meta name="description" content="3 数组中重复的数字问：在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 ...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>剑指Offer解题思路 | 龙娅婷</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
+
+
+    <link rel="icon" href="/img/bitbug_favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="longyating">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">龙娅婷</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/充电学习/"><i class="fa "></i>充电学习</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/有趣的题/"><i class="fa "></i>有趣的题</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书笔记/"><i class="fa "></i>读书笔记</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/吉他"><i class="fa "></i>吉他</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/摄影游记"><i class="fa "></i>摄影游记</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="https://www.longyating.com/bbs/"><i class="fa "></i>留言板</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/about/"><i class="fa "></i>关于</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="剑指Offer解题思路">
+            
+	            剑指Offer解题思路
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2020/02/18</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="3-数组中重复的数字"><a href="#3-数组中重复的数字" class="headerlink" title="3 数组中重复的数字"></a>3 <a href="https://www.nowcoder.com/practice/623a5ac0ea5b4e5f95552655361ae0a8?tpId=13&amp;tqId=11203&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">数组中重复的数字</a></h2><p>问：在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。</p>
+<p>答：注意范围是0~n-1，所以利用下标。for循环遍历下标，while将遍历到的这个值swap到该放的位置上,一直等i的值是匹配（while条件）的才跳出来while;在while中，每次要if先判断下目标移动位置上的值是否已经存在，存在那就是找到重复的。方法默认的false，假设有一个重复了，导致0没有了，意味着遍历完所有的了都没有找到，那肯定的法拉瑟了。<br>注：numbers == null || length &lt;= 0 是首先验证条件，直接返回false</p>
+<h2 id="4-二维数组的查找"><a href="#4-二维数组的查找" class="headerlink" title="4 二维数组的查找"></a>4 <a href="https://www.nowcoder.com/practice/abc3fe2ce8e146608e868a70efebf62e?tpId=13&amp;tqId=11154&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">二维数组的查找</a></h2><p>问：在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<p>答：从右上角（或者左下角）开始while遍历，判断值的大小来i++，或者j–;</p>
+<h2 id="5-替换空格"><a href="#5-替换空格" class="headerlink" title="5 替换空格"></a>5 <a href="https://www.nowcoder.com/practice/4060ac7e3e404ad1a894ef3e17650423?tpId=13&amp;tqId=11155&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">替换空格</a></h2><p>问：将一个字符串中的空格替换成 “%20”</p>
+<p>答：分两步骤： 找空格，加在尾部；指针移动替换<br>1、因为一个空格要替换成三个字符（%20），所以当遍历到一个空格时，需要在尾部填充两个任意字符。<br>2、令 P1 指向字符串原来的末尾位置，P2 指向字符串现在的末尾位置。P1 和 P2 从后向前遍历。<br>3、当 P1 遍历到一个空格时，就需要令 P2 指向的位置依次填充 02%（注意是逆序的），否则就填充上 P1 指向字符的值。<br>4、只有当P2 &gt; P1 &amp;&amp; P1 &gt;= 0 才进行上述步骤。<br>注：<br>在步骤1中，遍历的条件只能是  i&lt;= p1; 不能用i &lt; str.length() 因为str长度在变！<br>str.charAt(i) == ‘ ‘ //charAt(i)  和 str.setCharAt(i,’x’) 都是单引号；String要获取某下标的元素得用charAt，区别于数组的a[i]。<br>str.append(“  “) //str.append(String s) 双引号<br>str.toString() //将StringBuffer 转换成String</p>
+<h2 id="6-从尾到头打印链表"><a href="#6-从尾到头打印链表" class="headerlink" title="6 从尾到头打印链表"></a>6 <a href="https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=13&amp;tqId=11156&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">从尾到头打印链表</a></h2><p>问：输入一个链表，按链表从尾到头的顺序返回一个ArrayList<br>答：栈具有后进先出的特点，在遍历链表时将值按顺序放入栈中，最后出栈的顺序即为逆序。<br>注：import java.util.Stack;  //导包，自己手动加的<br>listNode.val //获取listNode当前的值<br>listNode = listNode.next;  //下一个节点<br>listNode != null //是否遍历完了</p>
+<h2 id="7-重建二叉树（难）"><a href="#7-重建二叉树（难）" class="headerlink" title="7 重建二叉树（难）"></a>7 <a href="https://www.nowcoder.com/practice/8a19cbe657394eeaac2f6ea9b0f6fcf6?tpId=13&amp;tqId=11157&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">重建二叉树（难）</a></h2><p>问：根据二叉树的前序遍历和中序遍历的结果，重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。<br>答：前序遍历序列的第一个元素 1 就是二叉树的根节点，中序遍历序列的根节点 1 把这个序列分成两半部分，分别是[4,7,2]和[5,3,8,6]，左半分部是根节点的左子树，右半分布是根节点的右子树。<br>基于这个特点，我们可以采用递归的方法来做，其大致逻辑如下。<br>1、通过前序序列第一个元素确定根节点(例如 1)。<br>2、通过根节点把中序序列分成两个序列，一个是左子树序列([4,7,2)]，一个是右子树序列([5,3,8,6)]。<br>3、通过左右子树的中序序列可以求出前序遍历的左右子树序列(左:[2,4,7],右:[3,5,8,6])。<br>4、左右子树的前序序列第一个元素分别是根节点的左右儿子。</p>
+<h2 id="8-二叉树的下一个结点-空，树"><a href="#8-二叉树的下一个结点-空，树" class="headerlink" title="8 二叉树的下一个结点(空，树)"></a>8 <a href="https://www.nowcoder.com/practice/9023a0c988684a53960365b889ceaf5e?tpId=13&amp;tqId=11210&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">二叉树的下一个结点(空，树)</a></h2><h2 id="9-用两个栈实现队列"><a href="#9-用两个栈实现队列" class="headerlink" title="9 用两个栈实现队列"></a>9 <a href="https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&amp;tqId=11158&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">用两个栈实现队列</a></h2><p>问：用两个栈来实现一个队列，完成队列的 Push 和 Pop 操作。<br>答：<br>push: 只push就行<br>pop: 总是返回2的pop。如果2为空，就将1的全部pop到1里面。先判断2是否为空，抛异常。最后return 是stack2.pop()；<br>注意：2为空时，注意pop异常 public int pop() throws Exception{ throw new Exception(“queue is empty”);}  //前面throw有s，后面没有s.</p>
+<h2 id="10-1-斐波那契数列"><a href="#10-1-斐波那契数列" class="headerlink" title="10.1 斐波那契数列"></a>10.1 <a href="https://www.nowcoder.com/practice/c6c7742f5ba7442aada113136ddea0c3?tpId=13&amp;tqId=11160&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">斐波那契数列</a></h2><p>问：现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。 n&lt;=39<br>答：因为n限制了范围，用最基础的大小为40的数组来保存，不用递归了。</p>
+<h2 id="10-2-矩形覆盖"><a href="#10-2-矩形覆盖" class="headerlink" title="10.2 矩形覆盖"></a>10.2 <a href="https://www.nowcoder.com/practice/72a5a919508a4251859fb2cfb987a0e6?tpId=13&amp;tqId=11163&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">矩形覆盖</a></h2><p>问：我们可以用2<em>1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2</em>1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？</p>
+<p>答：如果使用2x1的矩形来覆盖2x8的矩形的话，设有f(n)中覆盖放法。首先，第一个2x1的矩形有两种放法，第一种，竖着放，剩下的部分有f(7)种，第二种横着放，剩下的部分有f(6)种。则一共有f(8) = f(7) + f(6)。很明显这又是著名的Fibonacci数列。但是不要用递归，因为时间复杂度太大；用循环好处是，数列中间项保存起来，一直到求到了目标n。<br>注：pre2 = pre1; pre1 = result; 注意先后顺序，以免pre1被覆盖了。</p>
+<h2 id="10-3-跳台阶"><a href="#10-3-跳台阶" class="headerlink" title="10.3 跳台阶"></a>10.3 <a href="https://www.nowcoder.com/practice/8c82a5b80378478f9484d87d1c5f12a4?tpId=13&amp;tqId=11161&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">跳台阶</a></h2><p>问：一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。<br>答：跳 n 阶台阶，可以先跳 1 阶台阶，再跳 n-1 阶台阶；或者先跳 2 阶台阶，再跳 n-2 阶台阶。又是斐波那契数列，算法同上一模一样，也是避免用递归。</p>
+<h2 id="10-4-变态跳台阶"><a href="#10-4-变态跳台阶" class="headerlink" title="10.4 变态跳台阶"></a>10.4 <a href="https://www.nowcoder.com/practice/22243d016f6b47f2a6928b4313c85387?tpId=13&amp;tqId=11162&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">变态跳台阶</a></h2><p>问：一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。<br>答：f(n)=2f(n-1) 等比数列  f(n) = 2的(n-1)次方</p>
+<h2 id="11-旋转数组的最小数字"><a href="#11-旋转数组的最小数字" class="headerlink" title="11 旋转数组的最小数字"></a>11 <a href="https://www.nowcoder.com/practice/9f3231a991af4f55b95579b44b7a01ba?tpId=13&amp;tqId=11159&amp;tPage=1&amp;rp=1&amp;ru=/ta/coding-interviews&amp;qru=/ta/coding-interviews/question-ranking&amp;from=cyc_github" target="_blank" rel="noopener">旋转数组的最小数字</a></h2><p>问：把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。<br>NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。<br>答：（1）array[mid] &gt; array[high];<br>出现这种情况array类似[3, 4, 5, 0, 1, 2],此时最小数字移动在mid的右边。low = mid + 1；<br>（2）array[mid] == array[high]<br>出现这种情况array类似[0, 1, 1, 1, 1,]或者[1, 1, 1, 0, 1],此时最小数字不好判断在mid左边还是右边，这个时候只能一个个的试<br>high = high - 1;<br>（3）array[mid] &lt; array[high]:<br>出现这种情况的array类似[2,2,3,4,5,6,6],此时最小数字一定就是array[mid]或者在mid的左边。因为右边必然都是递增的。high = mid</p>
+<h2 id="12-矩阵中的路径（空。回溯法）"><a href="#12-矩阵中的路径（空。回溯法）" class="headerlink" title="12 矩阵中的路径（空。回溯法）"></a>12 矩阵中的路径（空。回溯法）</h2><h2 id="13-机器人的运动范围（空。回溯法）"><a href="#13-机器人的运动范围（空。回溯法）" class="headerlink" title="13 机器人的运动范围（空。回溯法）"></a>13 机器人的运动范围（空。回溯法）</h2><h2 id="14-剪绳子"><a href="#14-剪绳子" class="headerlink" title="14 剪绳子"></a>14 <a href="https://leetcode-cn.com/problems/integer-break/submissions/" target="_blank" rel="noopener">剪绳子</a></h2><p>问：给定一个正整数 n，将其拆分为至少两个正整数的和，并使这些整数的乘积最大化。 返回你可以获得的最大乘积。<br>答：（贪心法）尽可能多剪长度为 3 的绳子，并且不允许有长度为 1 的绳子出现。如果出现了，就从已经切好长度为 3 的绳子中拿出一段与长度为 1 的绳子重新组合，把它们切成两段长度为 2 的绳子。<br>证明：当 n &gt;= 5 时，3(n - 3) - n = 2n - 9 &gt; 0，且 2(n - 2) - n = n - 4 &gt; 0。因此在 n &gt;= 5 的情况下，将绳子剪成一段为 2 或者 3，得到的乘积会更大。又因为 3(n - 3) - 2(n - 2) = n - 5 &gt;= 0，所以剪成一段长度为 3 比长度为 2 得到的乘积更大。<br>所以先判断 n 的值 n&lt;2 reutrn 0; n==2 reutrn 1; n==3 reutrn 2; 其余的值按照所提的贪心算法（包括4）</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/paixu/" class="next-post btn btn-default" title="十大经典排序算法">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">十大经典排序算法</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'eKSu1dU1EnS6hRhcryDVmhgq-gzGzoHsz',
+            appKey: 'rnWgDAT2CH16DAKw6L9or4MG',
+            placeholder: '说点什么吧，强烈建议留下昵称和邮箱。有回复就可以邮件提醒你~~(￣▽￣)~*',
+            notify: true,
+            verify: true,
+            avatar: 'monsterid',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-数组中重复的数字"><span class="toc-text">3 数组中重复的数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-二维数组的查找"><span class="toc-text">4 二维数组的查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-替换空格"><span class="toc-text">5 替换空格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-从尾到头打印链表"><span class="toc-text">6 从尾到头打印链表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-重建二叉树（难）"><span class="toc-text">7 重建二叉树（难）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-二叉树的下一个结点-空，树"><span class="toc-text">8 二叉树的下一个结点(空，树)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-用两个栈实现队列"><span class="toc-text">9 用两个栈实现队列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-斐波那契数列"><span class="toc-text">10.1 斐波那契数列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-2-矩形覆盖"><span class="toc-text">10.2 矩形覆盖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-3-跳台阶"><span class="toc-text">10.3 跳台阶</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-4-变态跳台阶"><span class="toc-text">10.4 变态跳台阶</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-旋转数组的最小数字"><span class="toc-text">11 旋转数组的最小数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-矩阵中的路径（空。回溯法）"><span class="toc-text">12 矩阵中的路径（空。回溯法）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-机器人的运动范围（空。回溯法）"><span class="toc-text">13 机器人的运动范围（空。回溯法）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-剪绳子"><span class="toc-text">14 剪绳子</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019 longyating
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
+
+
+
