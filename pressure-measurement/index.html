@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="龙娅婷">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="关键字">
+
+
+    <meta name="description" content="系统环境Win10注意：不要在云服务器上跑，因为压力测试工具也会占据一部分资源。所以我在本地电脑上测试。
+压测工具apache bench简称ab,它是apache自带的压力测试工具。ab非常实...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>压力测试工具——ab | 龙娅婷</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
+
+
+    <link rel="icon" href="/img/bitbug_favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="longyating">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">龙娅婷</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/充电学习/"><i class="fa "></i>充电学习</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/有趣的题/"><i class="fa "></i>有趣的题</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书笔记/"><i class="fa "></i>读书笔记</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/吉他"><i class="fa "></i>吉他</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/摄影游记"><i class="fa "></i>摄影游记</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="https://www.longyating.com/bbs/"><i class="fa "></i>留言板</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/about/"><i class="fa "></i>关于</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="压力测试工具——ab">
+            
+	            压力测试工具——ab
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/充电学习/">充电学习</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2020/03/11</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h2><p>Win10<br>注意：不要在云服务器上跑，因为压力测试工具也会占据一部分资源。所以我在本地电脑上测试。</p>
+<h2 id="压测工具"><a href="#压测工具" class="headerlink" title="压测工具"></a>压测工具</h2><p>apache bench简称ab,它是apache自带的压力测试工具。ab非常实用，它不仅可以对apache服务器进行网站访问压力测试，也可以对或其它类型的服务器进行压力测试。比如nginx、tomcat、IIS等。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="http://httpd.apache.org/" target="_blank" rel="noopener">http://httpd.apache.org/</a></p>
+<p>解压后无需安装</p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd D:\develop\Java\(压测)httpd-2.4.41-o111c-x64-vc15-r2\Apache24\bin</span><br><span class="line">ab -n 1000 -c 100 http://39.97.122.3:8080/</span><br></pre></td></tr></table></figure>
+<p>其中－n表示请求数，－c表示并发数</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">D:\develop\Java\(压测)httpd-2.4.41-o111c-x64-vc15-r2\Apache24\bin&gt;ab -n 100 -c 10 http://39.97.122.3:8080/</span><br><span class="line">This is ApacheBench, Version 2.3 &lt;$Revision: 1843412 $&gt;</span><br><span class="line">Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/</span><br><span class="line">Licensed to The Apache Software Foundation, http://www.apache.org/</span><br><span class="line"></span><br><span class="line">Benchmarking 39.97.122.3 (be patient).....done</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Server Software:        Apache-Coyote/1.1</span><br><span class="line">Server Hostname:        39.97.122.3</span><br><span class="line">Server Port:            8080</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        20425 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      10</span><br><span class="line">Time taken for tests:   2.364 seconds</span><br><span class="line">Complete requests:      100</span><br><span class="line">Failed requests:        0</span><br><span class="line">Total transferred:      2059100 bytes</span><br><span class="line">HTML transferred:       2042500 bytes</span><br><span class="line">Requests per second:    42.31 [#/sec] (mean)</span><br><span class="line">Time per request:       236.359 [ms] (mean)</span><br><span class="line">Time per request:       23.636 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          850.76 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:       11   16   2.9     16      30</span><br><span class="line">Processing:    34  188 135.5    146     861</span><br><span class="line">Waiting:       14   66  39.7     62     272</span><br><span class="line">Total:         47  204 135.9    162     880</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%    162</span><br><span class="line">  66%    168</span><br><span class="line">  75%    176</span><br><span class="line">  80%    299</span><br><span class="line">  90%    361</span><br><span class="line">  95%    404</span><br><span class="line">  98%    822</span><br><span class="line">  99%    880</span><br><span class="line"> 100%    880 (longest request)</span><br></pre></td></tr></table></figure>
+<h2 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h2><ul>
+<li>吞吐率（Requests per second）<br>概念：服务器并发处理能力的量化描述，单位是reqs/s，指的是某个并发用户数下单位时间内处理的请求数。某个并发用户数下单位时间内能处理的最大请求数，称之为最大吞吐率。<br>计算公式：总请求数 / 处理完成这些请求数所花费的时间，即<br>Request per second = Complete requests/ Time taken for tests</li>
+<li>并发连接数（The number of concurrent connections）<br>概念：某个时刻服务器所接受的请求数目，简单的讲，就是一个会话。</li>
+<li>并发用户数（The number of concurrent users，Concurrency Level）<br>概念：要注意区分这个概念和并发连接数之间的区别，一个用户可能同时会产生多个会话，也即连接数。</li>
+<li>用户平均请求等待时间（Time per request） 计算公式：处理完成所有请求数所花费的时间/ （总请求数 / 并发用户数），即<br>Time per request = Time taken for tests /（ Complete requests /Concurrency Level）</li>
+<li>服务器平均请求等待时间（Time per request: across all concurrent requests）<br>计算公式：处理完成所有请求数所花费的时间 / 总请求数，即<br>Time taken for / testsComplete requests<br>可以看到，它是吞吐率的倒数。 同时，它也=用户平均请求等待时间/并发用户数，即<br>Time per request / Concurrency Level</li>
+</ul>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>下面为几个比较关心的指标</p>
+<ul>
+<li>Requests per second: 42.31 [#/sec] (mean)<br>//吞吐率，相当于 LR 中的每秒事务数，后面括号中的 mean 表示这是一个平均值</li>
+<li>Time per request: 236.359 [ms] (mean)<br>//用户平均请求等待时间，相当于 LR 中的平均事务响应时间，后面括号中的 mean 表示这是一个平均值</li>
+<li>Time per request: 23.636 [ms] (mean, across all concurrent requests)<br>//服务器平均请求处理时间</li>
+<li>Percentage of the requests served within a certain time (ms)<br>这段是每个请求处理时间的分布情况，50%的处理时间在162ms内，90%的处理时间在361ms内…，重要的是看90%的处理时间。</li>
+</ul>
+<p>参考文献<br><a href="https://www.cnblogs.com/behindman/p/8700611.html" target="_blank" rel="noopener">https://www.cnblogs.com/behindman/p/8700611.html</a><br><a href="https://blog.csdn.net/qq_34252622/article/details/92431267" target="_blank" rel="noopener">https://blog.csdn.net/qq_34252622/article/details/92431267</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/lock/" class="next-post btn btn-default" title="Java中的锁">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Java中的锁</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'eKSu1dU1EnS6hRhcryDVmhgq-gzGzoHsz',
+            appKey: 'rnWgDAT2CH16DAKw6L9or4MG',
+            placeholder: '说点什么吧，强烈建议留下昵称和邮箱。有回复就可以邮件提醒你~~(￣▽￣)~*',
+            notify: true,
+            verify: true,
+            avatar: 'monsterid',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#系统环境"><span class="toc-text">系统环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压测工具"><span class="toc-text">压测工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结果"><span class="toc-text">结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能指标"><span class="toc-text">性能指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析"><span class="toc-text">分析</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019 longyating
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
+
+
+

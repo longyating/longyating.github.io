@@ -200,7 +200,7 @@
 <p>6、在阿里云Linux服务器上部署。安装JDK后。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar wenda.jar &gt; temp.txt 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></p>
 <p>7、如果重新上传<br>显示当前终端开的后台任务。 [xxx]为PID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jobs -l</span><br></pre></td></tr></table></figure></p>
 <p>终端已经关闭，找到 java -jar wenda.jar 的PID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps ux</span><br></pre></td></tr></table></figure></p>
-<p>关闭PID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill PID</span><br></pre></td></tr></table></figure></p>
+<p>关闭PID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 PID</span><br></pre></td></tr></table></figure></p>
 <p>参考文献：<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-create-a-deployable-war-file" target="_blank" rel="noopener">官方教程|导出一个可部署的War文件</a></p>
 
     </div>
