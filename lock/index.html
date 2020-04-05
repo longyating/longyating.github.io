@@ -192,7 +192,7 @@
         <h2 id="CAS-AQS"><a href="#CAS-AQS" class="headerlink" title="CAS AQS"></a>CAS AQS</h2><h3 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h3><p>线程在读取数据时不进行加锁，在准备写回数据时，先去查询原值，操作的时候比较原值是否修改，若未被其他线程修改则写回，若已被修改，则重新执行读取流程。</p>
 <p>三要素：内存地址、旧的预期值、要修改的新值</p>
 <p>存在的问题：<br>1.ABA问题。解决办法：对内存中的值加个版本号，在比较的时候除了比较值还的比较<strong>版本号</strong>。<br>2.CPU开销较大<br>在并发量比较高的情况下，如果许多线程反复尝试更新某一个变量，却又一直更新不成功，循环往复，会给CPU带来很大的压力。<br>3.不能保证代码块的原子性<br>CAS机制所保证的只是<strong>一个变量的原子性操作</strong>，而<strong>不能保证整个代码块的原子性</strong>。比如需要保证3个变量共同进行原子性的更新，就不得不使用Synchronized了。</p>
-<h3 id="AQS"><a href="#AQS" class="headerlink" title="AQS"></a>AQS</h3><p>在AQS中，定义了一个volatile int state 变量作为共享资源，如果线程获取资源失败，则进入同步FIFO队列等待；如果成功获取资源就执行临界区代码。执行完释放资源时，会通知同步队列中的等待线程来获取资源后出队并执行。<br>AQS的底层操作时通过CAS实现。</p>
+<h3 id="AQS"><a href="#AQS" class="headerlink" title="AQS"></a>AQS</h3><p>在AQS中，定义了一个volatile int state 变量作为共享资源，如果线程获取资源失败，则进入同步FIFO队列等待；如果成功获取资源就执行临界区代码。执行完释放资源时，会通知同步队列中的等待线程来获取资源后出队并执行。<br>AQS的底层操作时通过CAS实现。<br><a href="https://segmentfault.com/a/1190000017372067" target="_blank" rel="noopener">深入分析AQS实现原理</a></p>
 <h2 id="JAVA锁有哪些种类，以及区别"><a href="#JAVA锁有哪些种类，以及区别" class="headerlink" title="JAVA锁有哪些种类，以及区别"></a><a href="https://blog.csdn.net/u011381576/article/details/80029592" target="_blank" rel="noopener">JAVA锁有哪些种类，以及区别</a></h2><h3 id="公平锁-非公平锁"><a href="#公平锁-非公平锁" class="headerlink" title="公平锁/非公平锁"></a>公平锁/非公平锁</h3><p>公平锁是指多个线程按照申请锁的顺序来获取锁。<br>非公平锁是指多个线程获取锁的顺序并不是按照申请锁的顺序，有可能后申请的线程比先申请的线程优先获取锁。有可能，会造成优先级反转或者饥饿现象。<br>对于Java ReentrantLock而言，通过构造函数指定该锁是否是公平锁，默认是非公平锁。非公平锁的优点在于吞吐量比公平锁大。<br>对于Synchronized而言，也是一种非公平锁。由于其并不像ReentrantLock是通过AQS的来实现线程调度，所以并没有任何办法使其变成公平锁。</p>
 <h3 id="可重入锁"><a href="#可重入锁" class="headerlink" title="可重入锁"></a>可重入锁</h3><p>可重入锁又名递归锁，是指在同一个线程在外层方法获取锁的时候，在进入内层方法会自动获取锁。说的有点抽象，下面会有一个代码的示例。<br>对于Java ReentrantLock而言, 他的名字就可以看出是一个可重入锁，其名字是Re entrant Lock重新进入锁。<br>对于Synchronized而言,也是一个可重入锁。可重入锁的一个好处是可一定程度避免死锁。</p>
 <p>可重入锁的实现原理: 是在锁内部存储了一个线程标识，用于判断当前的锁属于哪个线程，并且锁的内部维护了一个计数器，当锁空闲时此计数器的值为0，当被线程占用和重入时分别加1，当锁被释放时计数器减1，直到减到0时表示此锁为空闲状态。</p>
@@ -226,7 +226,7 @@
 <li>尝试使用定时锁，使用lock.tryLock（timeout）来替代使用内部锁机制。</li>
 <li>对于数据库锁，加锁和解锁必须在一个数据库连接里，否则会出现解锁失败的情况。</li>
 </ul>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/u011381576/article/details/80029592" target="_blank" rel="noopener">JAVA锁有哪些种类，以及区别</a><br><a href="https://blog.csdn.net/haima95/article/details/84329419" target="_blank" rel="noopener">Java面试准备-锁机制</a><br><a href="http://ifeve.com/java_lock_see/" target="_blank" rel="noopener">并发编程网|Java锁的种类以及辨析</a><br><a href="https://blog.csdn.net/chao_ji_cai/article/details/97650389?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">关于死锁面试题</a></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/u011381576/article/details/80029592" target="_blank" rel="noopener">JAVA锁有哪些种类，以及区别</a><br><a href="https://blog.csdn.net/haima95/article/details/84329419" target="_blank" rel="noopener">Java面试准备-锁机制</a><br><a href="http://ifeve.com/java_lock_see/" target="_blank" rel="noopener">并发编程网|Java锁的种类以及辨析</a><br><a href="https://blog.csdn.net/chao_ji_cai/article/details/97650389?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">关于死锁面试题</a><br><a href="https://segmentfault.com/a/1190000017372067" target="_blank" rel="noopener">深入分析AQS实现原理</a></p>
 
     </div>
     
