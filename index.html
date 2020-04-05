@@ -165,6 +165,115 @@
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
+                <a href="/redis/">redis</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime title>
+                    2020年03月20日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                简介Redis是一个高性能的key-value数据库。支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset(sorted set：有序集合)。安装及入门查看：https://www.j...
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+</div>
+            </div>
+
+            <div class="post-permalink">
+                <a href="/redis/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+        <div class="post-media">
+            <a href="/thread/">
+                <img class="img-ajax" src="/img/loading.gif" data-src="https://hexofile.oss-cn-beijing.aliyuncs.com/Learning/thread/threadStateChange.png" alt="Java线程相关知识">
+            </a>
+        </div>
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/thread/">Java线程相关知识</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime title>
+                    2020年03月20日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                线程的状态
+创建线程的三种方式常用方法join()可以将并行变为串行线程thread2中调用了thread1.join()，就进入等待状态 wait。直到 thread1 执行完毕后执行。12345678910111213141516...
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+</div>
+            </div>
+
+            <div class="post-permalink">
+                <a href="/thread/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
                 <a href="/pressure-measurement/">压力测试工具——ab</a>
             </h1>
             <div class="post-meta">  &bull;
@@ -227,9 +336,9 @@
         </div>
         <p class="brief">
             
-                JAVA锁有哪些种类，以及区别synchronized 与 lock 的区别
-synchronized是java的内置关键字，在JVM层面； Lock是个java类
-synchronized无法判断是否获取锁的状态，Lock可以判断是...
+                CAS AQSCAS线程在读取数据时不进行加锁，在准备写回数据时，先去查询原值，操作的时候比较原值是否修改，若未被其他线程修改则写回，若已被修改，则重新执行读取流程。
+三要素：内存地址、旧的预期值、要修改的新值
+存在的问题：1.ABA...
             
         </p>
     </div>
@@ -269,7 +378,7 @@ synchronized无法判断是否获取锁的状态，Lock可以判断是...
     
         <div class="post-media">
             <a href="/erchashu/">
-                <img class="img-ajax" src="/img/loading.gif" data-src="https://hexofile.oss-cn-beijing.aliyuncs.com/algorithm/ceng.jpg" alt="二叉树">
+                <img class="img-ajax" src="/img/loading.gif" data-src="https://hexofile.oss-cn-beijing.aliyuncs.com/algorithm/hou.jpg" alt="二叉树">
             </a>
         </div>
     
@@ -604,120 +713,6 @@ synchronized无法判断是否获取锁的状态，Lock可以判断是...
 </article>
 
 
-<article class="post">
-    
-        <div class="post-media">
-            <a href="/error-reids/">
-                <img class="img-ajax" src="/img/loading.gif" data-src="https://hexofile.oss-cn-beijing.aliyuncs.com/IDEA/redis_cmd.png" alt="【Java解决报错】发生异常WRONGTYPE Operation against a key holding the wrong kind of value">
-            </a>
-        </div>
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/error-reids/">【Java解决报错】发生异常WRONGTYPE Operation against a key holding the wrong kind of value</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime title>
-                    2020年02月10日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                报错内容发生异常WRONGTYPE Operation against a key holding the wrong kind of value
-
-解决方法 原因：redis 存储的数据类型与所用方法要求的类型不一致 
-
-首先CMD...
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-        <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/充电学习/">充电学习</a>
-        </span>
-    
-
-    
-        <span class="fa-wrap">
-            <i class="fa fa-tags"></i>
-            <span class="tags-meta">
-                
-                    <a class="tag-link" href="/tags/Java/">Java</a>
-                
-            </span>
-        </span>
-    
-
-    
-</div>
-            </div>
-
-            <div class="post-permalink">
-                <a href="/error-reids/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/map/">遍历map的四种方法</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime title>
-                    2020年02月06日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                Map.entrySet() 这个方法返回的是一个Set&amp;lt;Map.Entry&amp;lt;K,V&amp;gt;&amp;gt;，Map.Entry 是Map中的一个接口，他的用途是表示一个映射项（里面有Key和Value），而Set&amp;lt;Map....
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-        <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/有趣的题/">有趣的题</a>
-        </span>
-    
-
-    
-        <span class="fa-wrap">
-            <i class="fa fa-tags"></i>
-            <span class="tags-meta">
-                
-            </span>
-        </span>
-    
-
-    
-</div>
-            </div>
-
-            <div class="post-permalink">
-                <a href="/map/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
 
 
     <nav class="pagination" role="navigation">
@@ -801,7 +796,7 @@ synchronized无法判断是否获取锁的状态，Lock可以判断是...
         
     <div class="widget">
         <h3 class="title">归档</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/"><i class="fa" aria-hidden="true">2020年03月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/"><i class="fa" aria-hidden="true">2020年02月</i></a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/"><i class="fa" aria-hidden="true">2020年01月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/"><i class="fa" aria-hidden="true">2019年12月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/"><i class="fa" aria-hidden="true">2019年11月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/"><i class="fa" aria-hidden="true">2019年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/"><i class="fa" aria-hidden="true">2019年09月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/"><i class="fa" aria-hidden="true">2019年08月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/"><i class="fa" aria-hidden="true">2019年07月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/"><i class="fa" aria-hidden="true">2019年06月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019年05月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/"><i class="fa" aria-hidden="true">2019年04月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/"><i class="fa" aria-hidden="true">2019年03月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">16</span></li></ul>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/"><i class="fa" aria-hidden="true">2020年03月</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/"><i class="fa" aria-hidden="true">2020年02月</i></a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/"><i class="fa" aria-hidden="true">2020年01月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/"><i class="fa" aria-hidden="true">2019年12月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/"><i class="fa" aria-hidden="true">2019年11月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/"><i class="fa" aria-hidden="true">2019年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/"><i class="fa" aria-hidden="true">2019年09月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/"><i class="fa" aria-hidden="true">2019年08月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/"><i class="fa" aria-hidden="true">2019年07月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/"><i class="fa" aria-hidden="true">2019年06月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019年05月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/"><i class="fa" aria-hidden="true">2019年04月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/"><i class="fa" aria-hidden="true">2019年03月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">16</span></li></ul>
     </div>
 
 
