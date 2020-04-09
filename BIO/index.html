@@ -16,10 +16,12 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="吉他">
+    <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="简介　　第一次听Time travel，心想吉他还可以这样玩，后来了解了这种演奏风格————Fingerstyle guitar，指弹。几年前自己特别喜欢的曲子，如今有一天可以完整的演奏下来。　...">
+    <meta name="description" content="同步和异步
+同步： 同步就是发起一个调用后，被调用者未处理完请求之前，调用不返回。
+异步： 异步就是发起一个调用后，立刻得到被调用者的回应表示已接收到请求，但是被调用者并没有返回结果，此时我们可...">
 
 
 
@@ -31,7 +33,7 @@
     <!--Title-->
 
 
-<title>【吉他指弹】Time Travel | 龙娅婷</title>
+<title>什么是BIO、NIO、AIO？ | 龙娅婷</title>
 
 
     <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
@@ -64,7 +66,7 @@
 
     
 
-<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
+</head>
 
 </html>
 <!--[if lte IE 8]>
@@ -152,16 +154,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="【吉他指弹】Time Travel">
+        <h1 id="什么是BIO、NIO、AIO？">
             
-	            【吉他指弹】Time Travel
+	            什么是BIO、NIO、AIO？
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/吉他/">吉他</a>
+            <a class="category-link" href="/categories/有趣的题/">有趣的题</a>
         </span>
     
 
@@ -169,8 +171,6 @@
         <span class="fa-wrap">
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
-                
-                    <a class="tag-link" href="/tags/吉他/">吉他</a>
                 
             </span>
         </span>
@@ -180,7 +180,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/09/15</span>
+            <span class="date-meta">2020/04/09</span>
         </span>
         
     
@@ -190,24 +190,51 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>　　第一次听Time travel，心想吉他还可以这样玩，后来了解了这种演奏风格————Fingerstyle guitar，指弹。几年前自己特别喜欢的曲子，如今有一天可以完整的演奏下来。<br>　　时间在旅行，我们在成长。</p>
-<a id="more"></a>
-<hr>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><div id="dplayer8" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer8"),"theme":"#FADFA3","loop":true,"video":{"url":"https://hexofile.oss-cn-beijing.aliyuncs.com/timeTravel/timeTravel.mp4","pic":"https://hexofile.oss-cn-beijing.aliyuncs.com/timeTravel/timeTravel.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
-<hr>
-<h2 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=3&id=2063145779&auto=0&height=66"></iframe>
-
-<hr>
-<h2 id="吉他谱"><a href="#吉他谱" class="headerlink" title="吉他谱"></a>吉他谱</h2>
-
-	<div class="row">
-    <embed src="https://hexofile.oss-cn-beijing.aliyuncs.com/timeTravel/timeTravel.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
- 
-<hr>
-<h2 id="封面"><a href="#封面" class="headerlink" title="封面"></a>封面</h2><p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/timeTravel/timeTravel.jpg" alt="风居住的街道封面"></p>
+        <h2 id="同步和异步"><a href="#同步和异步" class="headerlink" title="同步和异步"></a>同步和异步</h2><ul>
+<li>同步： 同步就是发起一个调用后，被调用者未处理完请求之前，调用不返回。</li>
+<li>异步： 异步就是发起一个调用后，立刻得到被调用者的回应表示已接收到请求，但是被调用者并没有返回结果，此时我们可以处理其他的请求，被调用者通常依靠事件，回调等机制来通知调用者其返回结果。</li>
+</ul>
+<p>同步和异步的区别最大在于异步的话调用者不需要等待处理结果，被调用者会通过回调等机制来通知调用者其返回结果。</p>
+<h2 id="阻塞与非阻塞"><a href="#阻塞与非阻塞" class="headerlink" title="阻塞与非阻塞"></a>阻塞与非阻塞</h2><ul>
+<li>阻塞： 阻塞就是发起一个请求，调用者一直等待请求结果返回，也就是当前线程会被挂起，无法从事其他任务，只有当条件就绪才能继续。</li>
+<li>非阻塞： 非阻塞就是发起一个请求，调用者不用一直等着结果返回，可以先去干其他事情。</li>
+</ul>
+<h2 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h2><table>
+<thead>
+<tr>
+<th>组合方式</th>
+<th>性能分析</th>
+<th>举例 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同步阻塞</td>
+<td>最常用的一种用法，使用也是最简单的，但是 I/O 性能一般很差，CPU 大部分在空闲状态。</td>
+<td>有一排水壶在烧开水，<strong>BIO</strong>的工作模式就是， 叫一个线程停留在一个水壶那，直到这个水壶烧开，才去处理下一个水壶。但是实际上线程在等待水壶烧开的时间段什么都没有做。</td>
+</tr>
+<tr>
+<td>同步非阻塞</td>
+<td>提升 I/O 性能的常用手段，就是将 I/O 的阻塞改成非阻塞方式，尤其在网络 I/O 是长连接，同时传输数据也不是很多的情况下，提升性能非常有效。 这种方式通常能提升 I/O 性能，但是会增加CPU 消耗，要考虑增加的 I/O 性能能不能补偿 CPU 的消耗，也就是系统的瓶颈是在 I/O 还是在 CPU 上。</td>
+<td><strong>NIO</strong>的做法是叫一个线程不断的轮询每个水壶的状态，看看是否有水壶的状态发生了改变，从而进行下一步的操作。</td>
+</tr>
+<tr>
+<td>异步阻塞</td>
+<td>异步阻塞这种方式在分布式数据库中经常用到，例如在网一个分布式数据库中写一条记录，通常会有一份是同步阻塞的记录，而还有两至三份是备份记录会写到其它机器上，这些备份记录通常都是采用异步阻塞的方式写 I/O。对网络 I/O 能够提升效率，尤其像上面这种同时写多份相同数据的情况。</td>
+<td></td>
+</tr>
+<tr>
+<td>异步非阻塞</td>
+<td>这种组合方式用起来比较复杂，只有在一些非常复杂的分布式情况下使用，像集群之间的消息同步机制一般用这种 I/O 组合方式。如 Cassandra 的 Gossip 通信机制就是采用异步非阻塞的方式。它适合同时要传多份相同的数据到集群中不同的机器，同时数据的传输量虽然不大，但是却非常频繁。这种网络 I/O 用这个方式性能能达到最高。</td>
+<td><strong>AIO</strong>为每个水壶上面装了一个开关，水烧开之后，水壶会自动通知我水烧开了。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="BIO-synchronous-Blocking-IO-同步阻塞"><a href="#BIO-synchronous-Blocking-IO-同步阻塞" class="headerlink" title="BIO (synchronous Blocking IO) 同步阻塞"></a>BIO (synchronous Blocking IO) 同步阻塞</h3><h3 id="NIO-synchronous-Non-blocking-IO-同步非阻塞"><a href="#NIO-synchronous-Non-blocking-IO-同步非阻塞" class="headerlink" title="NIO (synchronous Non blocking IO) 同步非阻塞"></a>NIO (synchronous Non blocking IO) 同步非阻塞</h3><h3 id="AIO-Asynchronous-non-blocking-IO-异步非阻塞"><a href="#AIO-Asynchronous-non-blocking-IO-异步非阻塞" class="headerlink" title="AIO (Asynchronous non blocking IO) 异步非阻塞"></a>AIO (Asynchronous non blocking IO) 异步非阻塞</h3><p>简而言之，同步和异步最关键的区别在于同步必须等待（BIO）或者主动的去询问（NIO）IO是否完成，而异步（AIO）操作提交后只需等待操作系统的通知即可。</p>
+<h3 id="各自适用场景"><a href="#各自适用场景" class="headerlink" title="各自适用场景"></a>各自适用场景</h3><p>BIO方式适用于连接数目比较小且固定的架构，这种方式对服务器资源要求比较高，并发局限于应用中，JDK1.4以前的唯一选择，但程序直观简单易理解。</p>
+<p>NIO方式适用于连接数目多且连接比较短（轻操作）的架构，比如聊天服务器，并发局限于应用中，编程比较复杂，JDK1.4开始支持。</p>
+<p>AIO方式适用于连接数目多且连接比较长（重操作）的架构，比如相册服务器，充分调用OS参与并发操作，编程比较复杂，JDK7开始支持。</p>
+<p><a href="http://www.imooc.com/article/265871" target="_blank" rel="noopener">Java核心（五）深入理解BIO、NIO、AIO</a><br><a href="https://blog.csdn.net/m0_38109046/article/details/89449305" target="_blank" rel="noopener">Java面试常考的 BIO，NIO，AIO 总结</a><br><a href="https://www.ibm.com/developerworks/cn/java/j-lo-javaio/index.html" target="_blank" rel="noopener">IBM | 深入分析 Java I/O 的工作机制</a><br><a href="https://blog.csdn.net/u010541670/article/details/91890649?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1" target="_blank" rel="noopener">BIO、NIO和AIO的区别、三种IO的原理与用法</a></p>
 
     </div>
     
@@ -225,15 +252,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/798/" class="pre-post btn btn-default" title="798">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">798</span>
-        </a>
     
-    
-        <a href="/雍和宫/" class="next-post btn btn-default" title="雍和宫">
+        <a href="/redis/" class="next-post btn btn-default" title="redis：一个神奇且强大的数据库">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">雍和宫</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">redis：一个神奇且强大的数据库</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -276,7 +298,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#视频"><span class="toc-text">视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#音频"><span class="toc-text">音频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#吉他谱"><span class="toc-text">吉他谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封面"><span class="toc-text">封面</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#同步和异步"><span class="toc-text">同步和异步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阻塞与非阻塞"><span class="toc-text">阻塞与非阻塞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组合"><span class="toc-text">组合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BIO-synchronous-Blocking-IO-同步阻塞"><span class="toc-text">BIO (synchronous Blocking IO) 同步阻塞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NIO-synchronous-Non-blocking-IO-同步非阻塞"><span class="toc-text">NIO (synchronous Non blocking IO) 同步非阻塞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AIO-Asynchronous-non-blocking-IO-异步非阻塞"><span class="toc-text">AIO (Asynchronous non blocking IO) 异步非阻塞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#各自适用场景"><span class="toc-text">各自适用场景</span></a></li></ol></li></ol>
         
     </div>
 </aside>
