@@ -16,10 +16,11 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="吉他">
+    <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="简介　　《泰坦尼克号》主题曲《My Heart Will Go On（我心永恒）》　　The story is about disaster, brave, faith and the true...">
+    <meta name="description" content="MySql慢查询MySQL的慢查询，全名是慢查询日志，是MySQL提供的一种日志记录，用来记录在MySQL中响应时间超过阀值的语句。
+具体环境中，运行时间超过long_query_time值的S...">
 
 
 
@@ -31,7 +32,7 @@
     <!--Title-->
 
 
-<title>【古典吉他】My Heart Will Go On | 龙娅婷</title>
+<title>Mysql要学习的不仅仅是增删改查 | 龙娅婷</title>
 
 
     <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
@@ -64,7 +65,7 @@
 
     
 
-<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
+</head>
 
 </html>
 <!--[if lte IE 8]>
@@ -152,16 +153,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="【古典吉他】My Heart Will Go On">
+        <h1 id="Mysql要学习的不仅仅是增删改查">
             
-	            【古典吉他】My Heart Will Go On
+	            Mysql要学习的不仅仅是增删改查
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/吉他/">吉他</a>
+            <a class="category-link" href="/categories/有趣的题/">有趣的题</a>
         </span>
     
 
@@ -169,8 +170,6 @@
         <span class="fa-wrap">
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
-                
-                    <a class="tag-link" href="/tags/吉他/">吉他</a>
                 
             </span>
         </span>
@@ -180,7 +179,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/04/14</span>
+            <span class="date-meta">2020/04/15</span>
         </span>
         
     
@@ -190,24 +189,38 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>　　《泰坦尼克号》主题曲《My Heart Will Go On（我心永恒）》<br>　　The story is about disaster, brave, faith and the true love.<br>　　You must promise me that you’ll survive.<br>　　You jump, I jump.<br>　　真爱永恒。</p>
-<a id="more"></a>
-<hr>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><div id="dplayer6" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer6"),"theme":"#FADFA3","loop":true,"video":{"url":"https://hexofile.oss-cn-beijing.aliyuncs.com/myHeartWillGoOn/myHeartWillGoOn.mp4","pic":"https://hexofile.oss-cn-beijing.aliyuncs.com/myHeartWillGoOn/myHeartWillGoOn.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
-<hr>
-<h2 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=3&id=2060613038&auto=0&height=66"></iframe>
-
-<hr>
-<h2 id="吉他谱"><a href="#吉他谱" class="headerlink" title="吉他谱"></a>吉他谱</h2>
-
-	<div class="row">
-    <embed src="https://hexofile.oss-cn-beijing.aliyuncs.com/myHeartWillGoOn/myHeartWillGoOn.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
- 
-<hr>
-<h2 id="封面"><a href="#封面" class="headerlink" title="封面"></a>封面</h2><p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/myHeartWillGoOn/myHeartWillGoOn.jpg" alt="My Heart Will Go On封面"></p>
+        <h2 id="MySql慢查询"><a href="#MySql慢查询" class="headerlink" title="MySql慢查询"></a>MySql慢查询</h2><p>MySQL的慢查询，全名是慢查询日志，是MySQL提供的一种日志记录，用来记录在MySQL中响应时间超过阀值的语句。</p>
+<p>具体环境中，运行时间超过long_query_time值的SQL语句，则会被记录到慢查询日志中。</p>
+<p>long_query_time的默认值为10，意思是记录运行10秒以上的语句。</p>
+<p>默认情况下，MySQL数据库并不启动慢查询日志，需要手动来设置这个参数。</p>
+<h3 id="查询数据库比较慢可能是哪些原因造成的？"><a href="#查询数据库比较慢可能是哪些原因造成的？" class="headerlink" title="查询数据库比较慢可能是哪些原因造成的？"></a><a href="https://blog.csdn.net/u011485276/article/details/82983118?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1" target="_blank" rel="noopener">查询数据库比较慢可能是哪些原因造成的？</a></h3><p>1、没有索引或者没有用到索引(这是查询慢最常见的问题，是程序设计的缺陷)<br>2、I/O吞吐量小，形成了瓶颈效应。<br>3、没有创建计算列导致查询不优化。<br>4、内存不足<br>5、网络速度慢<br>6、查询出的数据量过大（可以采用多次查询，其他的方法降低数据量）<br>7、锁或者死锁(这也是查询慢最常见的问题，是程序设计的缺陷)<br>8、sp_lock,sp_who,活动的用户查看，原因是读写竞争资源。<br>9、返回了不必要的行和列<br>10、查询语句不好，没有优化</p>
+<h3 id="如何解决慢查询问题"><a href="#如何解决慢查询问题" class="headerlink" title="如何解决慢查询问题"></a><a href="https://www.jianshu.com/p/af48705f20b8" target="_blank" rel="noopener">如何解决慢查询问题</a></h3><p>要解决慢查询，就是优化这些查询缓慢的语句，或是重新组织自己的数据。<br>重新组织数据的表现形式是分表。对于成熟的业务系统而言，分表的代价是极高的。所以如何组织一张表仍然是建表的重要决策。<br>因此，优化语句才是解决慢查询的基本方法。</p>
+<ul>
+<li><strong>加索引</strong></li>
+</ul>
+<ol>
+<li><p>使用LIKE关键字的查询语句<br>在使用LIKE关键字进行查询的查询语句中，如果匹配字符串的第一个字符为“%”，索引不会起作用。只有“%”不在第一个位置索引才会起作用。</p>
+</li>
+<li><p>使用多列索引的查询语句<br>MySQL可以为多个字段创建索引。一个索引最多可以包括16个字段。对于多列索引，只有查询条件使用了这些字段中的第一个字段时，索引才会被使用。</p>
+</li>
+</ol>
+<ul>
+<li>优化数据库结构<br>合理的数据库结构不仅可以使数据库占用更小的磁盘空间，而且能够使查询速度更快。数据库结构的设计，需要考虑数据冗余、查询和更新的速度、字段的数据类型是否合理等多方面的内容。</li>
+</ul>
+<ol>
+<li><p>将字段很多的表分解成多个表<br>对于字段比较多的表，如果有些字段的使用频率很低，可以将这些字段分离出来形成新表。因为当一个表的数据量很大时，会由于使用频率低的字段的存在而变慢。</p>
+</li>
+<li><p>增加中间表<br>对于需要经常联合查询的表，可以建立中间表以提高查询效率。通过建立中间表，把需要经常联合查询的数据插入到中间表中，然后将原来的联合查询改为对中间表的查询，以此来提高查询效率。</p>
+</li>
+</ol>
+<ul>
+<li><p><strong>分解关联查询</strong><br>将一个大的查询分解为多个小查询是很有必要的。很多高性能的应用都会对关联查询进行分解，就是可以对每一个表进行一次单表查询，然后将查询结果在应用程序中进行关联</p>
+</li>
+<li><p><strong>Limit分页</strong><br>分页是一个常见的情景。分页通常会使用limit加上偏移量的方法实现，同时加上合适的order by 子句。如果有对应的索引，通常效率会不错，否则MySQL需要做大量的文件排序操作。<br>但是，当偏移量非常大的时候，例如可能是limit 10000,20这样的查询，MySQL需要查询10020条，但是只返回最后20条，这样的代价很高。<br><strong>优化此类查询的一个最简单的方法是尽可能的使用索引覆盖扫描，而不是查询所有的列。然后根据需要做一次关联操作再返回所需的列。对于偏移量很大的时候这样做的效率会得到很大提升。</strong></p>
+</li>
+</ul>
+<h2 id="设计三范式"><a href="#设计三范式" class="headerlink" title="设计三范式"></a>设计三范式</h2><p>第一范式：强调的是列的原子性，列不能分成其他几列，第一范式就是无重复的域。<br>第二范式：首先是在第一范式的基础上，另外包含两部分的内容，一是表必须有主键，二是没有包含在主键中的列必须完全依赖于主键，二不能只依赖于主键的一部分。<br>第三范式：在第二范式的基础之上，非主键列必须直接依赖于主键不能存在传递依赖。</p>
+<p>目的：消除冗余，单纯依赖关系。不允许数据库表出现冗余字段，不允许表之间多重依赖<br>参考文献<br><a href="https://www.jianshu.com/p/af48705f20b8" target="_blank" rel="noopener">常见Mysql的慢查询优化方式</a><br><a href="https://www.jianshu.com/p/9cd1c333874f" target="_blank" rel="noopener">MySQL中的慢查询</a><br><a href="https://blog.csdn.net/timchen525/article/details/75268151" target="_blank" rel="noopener">关于MySQL 通用查询日志和慢查询日志分析</a></p>
 
     </div>
     
@@ -225,15 +238,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/风居住的街道/" class="pre-post btn btn-default" title="【吉他指弹】风居住的街道">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【吉他指弹】风居住的街道</span>
-        </a>
     
-    
-        <a href="/信道名称汇总/" class="next-post btn btn-default" title="LTE信道汇总">
+        <a href="/ceshi/" class="next-post btn btn-default" title="测试知识">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">LTE信道汇总</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">测试知识</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -276,7 +284,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#视频"><span class="toc-text">视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#音频"><span class="toc-text">音频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#吉他谱"><span class="toc-text">吉他谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封面"><span class="toc-text">封面</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySql慢查询"><span class="toc-text">MySql慢查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查询数据库比较慢可能是哪些原因造成的？"><span class="toc-text">查询数据库比较慢可能是哪些原因造成的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何解决慢查询问题"><span class="toc-text">如何解决慢查询问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计三范式"><span class="toc-text">设计三范式</span></a></li></ol>
         
     </div>
 </aside>

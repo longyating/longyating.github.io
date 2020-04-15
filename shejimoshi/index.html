@@ -16,10 +16,12 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="吉他">
+    <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="简介　　《泰坦尼克号》主题曲《My Heart Will Go On（我心永恒）》　　The story is about disaster, brave, faith and the true...">
+    <meta name="description" content="23种设计模式深入解析，史上最通俗易懂的设计模式讲解
+单例模式
+懒汉式-线程不安全以下实现中，私有静态变量 uniqueInstance 被延迟实例化，这样做的好处是，如果没有用到该类，那么就不...">
 
 
 
@@ -31,7 +33,7 @@
     <!--Title-->
 
 
-<title>【古典吉他】My Heart Will Go On | 龙娅婷</title>
+<title>设计模式 | 龙娅婷</title>
 
 
     <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
@@ -64,7 +66,7 @@
 
     
 
-<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
+</head>
 
 </html>
 <!--[if lte IE 8]>
@@ -152,16 +154,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="【古典吉他】My Heart Will Go On">
+        <h1 id="设计模式">
             
-	            【古典吉他】My Heart Will Go On
+	            设计模式
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/吉他/">吉他</a>
+            <a class="category-link" href="/categories/有趣的题/">有趣的题</a>
         </span>
     
 
@@ -169,8 +171,6 @@
         <span class="fa-wrap">
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
-                
-                    <a class="tag-link" href="/tags/吉他/">吉他</a>
                 
             </span>
         </span>
@@ -180,7 +180,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/04/14</span>
+            <span class="date-meta">2020/04/14</span>
         </span>
         
     
@@ -190,24 +190,21 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>　　《泰坦尼克号》主题曲《My Heart Will Go On（我心永恒）》<br>　　The story is about disaster, brave, faith and the true love.<br>　　You must promise me that you’ll survive.<br>　　You jump, I jump.<br>　　真爱永恒。</p>
-<a id="more"></a>
-<hr>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><div id="dplayer6" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer6"),"theme":"#FADFA3","loop":true,"video":{"url":"https://hexofile.oss-cn-beijing.aliyuncs.com/myHeartWillGoOn/myHeartWillGoOn.mp4","pic":"https://hexofile.oss-cn-beijing.aliyuncs.com/myHeartWillGoOn/myHeartWillGoOn.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
-<hr>
-<h2 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=3&id=2060613038&auto=0&height=66"></iframe>
-
-<hr>
-<h2 id="吉他谱"><a href="#吉他谱" class="headerlink" title="吉他谱"></a>吉他谱</h2>
-
-	<div class="row">
-    <embed src="https://hexofile.oss-cn-beijing.aliyuncs.com/myHeartWillGoOn/myHeartWillGoOn.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
- 
-<hr>
-<h2 id="封面"><a href="#封面" class="headerlink" title="封面"></a>封面</h2><p><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/myHeartWillGoOn/myHeartWillGoOn.jpg" alt="My Heart Will Go On封面"></p>
+        <p><a href="https://www.cnblogs.com/numpycomcn/p/11829142.html" target="_blank" rel="noopener">23种设计模式深入解析，史上最通俗易懂的设计模式讲解</a></p>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a><a href="https://cyc2018.github.io/CS-Notes/#/notes/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%20%20-%20%E5%8D%95%E4%BE%8B" target="_blank" rel="noopener">单例模式</a></h2><ul>
+<li>懒汉式-线程不安全<br>以下实现中，私有静态变量 uniqueInstance 被延迟实例化，这样做的好处是，如果没有用到该类，那么就不会实例化 uniqueInstance，从而节约资源。</li>
+<li>饿汉式-线程安全<br>线程不安全问题主要是由于 uniqueInstance 被实例化多次，采取直接实例化 uniqueInstance 的方式就不会产生线程不安全问题。但是直接实例化的方式也丢失了延迟实例化带来的节约资源的好处。</li>
+<li>懒汉式-线程安全<br>只需要对 getUniqueInstance() 方法加锁，那么在一个时间点只能有一个线程能够进入该方法，从而避免了实例化多次 uniqueInstance。<br>但是当一个线程进入该方法之后，其它试图进入该方法的线程都必须等待，即使 uniqueInstance 已经被实例化了。这会让线程阻塞时间过长，因此该方法有性能问题，不推荐使用。</li>
+<li>双重校验锁-线程安全（重点）<br>uniqueInstance 只需要被实例化一次，之后就可以直接使用了。加锁操作只需要对实例化那部分的代码进行，只有当 uniqueInstance 没有被实例化时，才需要进行加锁。<br>双重校验锁先判断 uniqueInstance 是否已经被实例化，如果没有被实例化，那么才对实例化语句进行加锁。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton uniqueInstance;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getUniqueInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;</span><br><span class="line">                <span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    uniqueInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>考虑下面的实现，也就是只使用了一个 if 语句。在 uniqueInstance == null 的情况下，如果两个线程都执行了 if 语句，那么两个线程都会进入 if 语句块内。虽然在 if 语句块内有加锁操作，但是两个线程都会执行 uniqueInstance = new Singleton(); 这条语句，只是先后的问题，那么就会进行两次实例化。因此必须使用双重校验锁，也就是需要使用两个 if 语句：第一个 if 语句用来避免 uniqueInstance 已经被实例化之后的加锁操作，而第二个 if 语句进行了加锁，所以只能有一个线程进入，就不会出现 uniqueInstance == null 时两个线程同时进行实例化操作。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (Singleton.class) &#123;</span><br><span class="line">        uniqueInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>静态内部类实现</li>
+<li>枚举实现<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a><a href="https://www.cnblogs.com/yssjun/p/11102162.html" target="_blank" rel="noopener">工厂模式</a></h2><h3 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h3>该模式对对象创建管理方式最为简单，因为其仅仅简单的对不同类对象的创建进行了一层薄薄的封装。该模式通过向工厂传递类型来指定要创建的对象.<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/Learning/shejimoshi/factory1.png" alt><h3 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h3>简单工厂模式中工厂负责生产所有产品相比，工厂方法模式将生成具体产品的任务分发给具体的产品工厂<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/Learning/shejimoshi/factory2.png" alt><h3 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h3>上面两种模式不管工厂怎么拆分抽象，都只是针对一类产品Phone（AbstractProduct），如果要生成另一种产品PC，应该怎么表示呢？<br>抽象工厂模式通过在AbstarctFactory中增加创建产品的接口，并在具体子工厂中实现新加产品的创建，当然前提是子工厂支持生产该产品。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/Learning/shejimoshi/factory3.png" alt><br>从上面类图结构中可以清楚的看到如何在工厂方法模式中通过增加新产品接口来实现产品的增加的。</li>
+</ul>
+<p>接下来我们继续通过小米和苹果产品生产的例子来解释该模式。</p>
+<p>为了弄清楚上面的结构，我们使用具体的产品和工厂来表示上面的UML类图，能更加清晰的看出模式是如何演变的：<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/Learning/shejimoshi/factory4.png" alt></p>
 
     </div>
     
@@ -225,15 +222,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/风居住的街道/" class="pre-post btn btn-default" title="【吉他指弹】风居住的街道">
+        <a href="/ceshi/" class="pre-post btn btn-default" title="测试知识">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【吉他指弹】风居住的街道</span>
+            <span class="hidden-xs">测试知识</span>
         </a>
     
     
-        <a href="/信道名称汇总/" class="next-post btn btn-default" title="LTE信道汇总">
+        <a href="/https/" class="next-post btn btn-default" title="https">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">LTE信道汇总</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">https</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -276,7 +273,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#视频"><span class="toc-text">视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#音频"><span class="toc-text">音频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#吉他谱"><span class="toc-text">吉他谱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封面"><span class="toc-text">封面</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#单例模式"><span class="toc-text">单例模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工厂模式"><span class="toc-text">工厂模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单工厂模式"><span class="toc-text">简单工厂模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工厂方法模式"><span class="toc-text">工厂方法模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象工厂模式"><span class="toc-text">抽象工厂模式</span></a></li></ol></li></ol>
         
     </div>
 </aside>
