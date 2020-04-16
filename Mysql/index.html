@@ -19,8 +19,8 @@
     <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="MySql慢查询MySQL的慢查询，全名是慢查询日志，是MySQL提供的一种日志记录，用来记录在MySQL中响应时间超过阀值的语句。
-具体环境中，运行时间超过long_query_time值的S...">
+    <meta name="description" content="索引有什么副作用吗？（1）索引是有大量数据的时候才建立的，没有大量数据反而会浪费时间，因为索引是使用二叉树建立.
+（2）当一个系统查询比较频繁，而新建，修改等操作比较少时，可以创建索引，这样查询...">
 
 
 
@@ -189,7 +189,67 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="MySql慢查询"><a href="#MySql慢查询" class="headerlink" title="MySql慢查询"></a>MySql慢查询</h2><p>MySQL的慢查询，全名是慢查询日志，是MySQL提供的一种日志记录，用来记录在MySQL中响应时间超过阀值的语句。</p>
+        <h2 id="索引有什么副作用吗？"><a href="#索引有什么副作用吗？" class="headerlink" title="索引有什么副作用吗？"></a><a href="https://www.cnblogs.com/dyh-air/articles/7891264.html" target="_blank" rel="noopener">索引有什么副作用吗？</a></h2><p>（1）索引是有大量数据的时候才建立的，没有大量数据反而会浪费时间，因为索引是使用二叉树建立.</p>
+<p>（2）当一个系统查询比较频繁，而新建，修改等操作比较少时，可以创建索引，这样查询的速度会比以前快很多，同时也带来弊端，就是新建或修改等操作时，比没有索引或没有建立覆盖索引时的要慢。</p>
+<p>（3）索引并不是越多越好，太多索引会占用很多的索引表空间，甚至比存储一条记录更多。<br>对于需要频繁新增记录的表，最好不要创建索引，没有索引的表，执行insert、append都很快，有了索引以后，会多一个维护索引的操作，一些大表可能导致insert 速度非常慢。</p>
+<h2 id="主键和外键"><a href="#主键和外键" class="headerlink" title="主键和外键"></a><a href="https://www.cnblogs.com/PyLearn/p/7624768.html" target="_blank" rel="noopener">主键和外键</a></h2><p>成绩表中的学号不是成绩表的主键，但它和学生表中的学号相对应，并且学生表中的学号是学生表的主键，则称成绩表中的学号是学生表的外键</p>
+<table>
+<thead>
+<tr>
+<th>区别</th>
+<th>主键</th>
+<th>外键</th>
+<th>索引</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义</td>
+<td>唯一标识一条记录，不能有重复的，不允许为空</td>
+<td>表的外键是另一表的主键, 外键可以有重复的, 可以是空值</td>
+<td>该字段没有重复值，但可以有一个空值</td>
+</tr>
+<tr>
+<td>作用</td>
+<td>用来保证数据完整性</td>
+<td>用来和其他表建立联系用的</td>
+<td>是提高查询排序的速度</td>
+</tr>
+<tr>
+<td>个数</td>
+<td>主键只能有一个</td>
+<td>一个表可以有多个外键</td>
+<td>一个表可以有多个唯一索引</td>
+</tr>
+</tbody>
+</table>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a><a href="https://baijiahao.baidu.com/s?id=1650065302592962405&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">事务</a></h2><p>事务处理可以用来维护数据库的完整性，保证成批的 SQL 语句<strong>要么全部执行，要么全部不执行。</strong><br>事务是必须满足4个条件（ACID）：：原子性（Atomicity，或称不可分割性）、一致性（Consistency）、隔离性（Isolation，又称独立性）、持久性（Durability）。</p>
+<ul>
+<li><p>（原子性Atomicity）：原子性指的是事务是一个不可分割的，要么都执行要么都不执行。</p>
+</li>
+<li><p>（一致性Consistency）：事务必须使得数据库从一个一致性状态，到另外一个一致性状态。</p>
+</li>
+<li><p>（隔离性Isolation）：指的是一个事务的执行，不能被其他的事务所干扰。</p>
+</li>
+<li><p>（持久性Durability）：持久性指的是一个事务一旦提交了之后，对数据库的改变就是永久的。</p>
+</li>
+</ul>
+<h2 id="聚集索引和非聚集索引的区别？"><a href="#聚集索引和非聚集索引的区别？" class="headerlink" title="聚集索引和非聚集索引的区别？"></a><a href="https://www.jianshu.com/p/d95d6d692e2c" target="_blank" rel="noopener">聚集索引和非聚集索引的区别？</a></h2><p>聚集索引表示表中存储的数据按照索引的顺序存储，检索效率比非聚集索引高，但对数据更新影响较大。</p>
+<p>非聚集索引表示数据存储在一个地方，索引存储在另一个地方，索引带有指针指向数据的存储位置，非聚集索引检索效率比聚集索引低，但对数据更新影响较小。</p>
+<ul>
+<li>聚集索引一个表只能有一个，而非聚集索引一个表可以存在多个</li>
+<li>聚集索引存储记录是物理上连续存在，而非聚集索引是逻辑上的连续，物理存储并不连续</li>
+<li>聚集索引：物理存储按照索引排序；聚集索引是一种索引组织形式，索引的键值逻辑顺序决定了表数据行的物理存储顺序</li>
+<li>非聚集索引：物理存储不按照索引排序；非聚集索引则就是普通索引了，仅仅只是对数据列创建相应的索引，不影响整个表的物理存储顺序.</li>
+<li>索引是通过二叉树的数据结构来描述的，我们可以这么理解聚簇索引：索引的叶节点就是数据节点。而非聚簇索引的叶节点仍然是索引节点，只不过有一个指针指向对应的数据块。</li>
+</ul>
+<h2 id="设计三范式"><a href="#设计三范式" class="headerlink" title="设计三范式"></a>设计三范式</h2><ul>
+<li>第一范式：强调的是列的原子性，列不能分成其他几列，第一范式就是无重复的域。</li>
+<li>第二范式：首先是在第一范式的基础上，另外包含两部分的内容，一是表必须有主键，二是没有包含在主键中的列必须完全依赖于主键，二不能只依赖于主键的一部分。</li>
+<li>第三范式：在第二范式的基础之上，非主键列必须直接依赖于主键不能存在传递依赖。</li>
+</ul>
+<p>目的：消除冗余，单纯依赖关系。不允许数据库表出现冗余字段，不允许表之间多重依赖</p>
+<h2 id="MySql慢查询"><a href="#MySql慢查询" class="headerlink" title="MySql慢查询"></a>MySql慢查询</h2><p>MySQL的慢查询，全名是慢查询日志，是MySQL提供的一种日志记录，用来记录在MySQL中响应时间超过阀值的语句。</p>
 <p>具体环境中，运行时间超过long_query_time值的SQL语句，则会被记录到慢查询日志中。</p>
 <p>long_query_time的默认值为10，意思是记录运行10秒以上的语句。</p>
 <p>默认情况下，MySQL数据库并不启动慢查询日志，需要手动来设置这个参数。</p>
@@ -219,8 +279,7 @@
 <li><p><strong>Limit分页</strong><br>分页是一个常见的情景。分页通常会使用limit加上偏移量的方法实现，同时加上合适的order by 子句。如果有对应的索引，通常效率会不错，否则MySQL需要做大量的文件排序操作。<br>但是，当偏移量非常大的时候，例如可能是limit 10000,20这样的查询，MySQL需要查询10020条，但是只返回最后20条，这样的代价很高。<br><strong>优化此类查询的一个最简单的方法是尽可能的使用索引覆盖扫描，而不是查询所有的列。然后根据需要做一次关联操作再返回所需的列。对于偏移量很大的时候这样做的效率会得到很大提升。</strong></p>
 </li>
 </ul>
-<h2 id="设计三范式"><a href="#设计三范式" class="headerlink" title="设计三范式"></a>设计三范式</h2><p>第一范式：强调的是列的原子性，列不能分成其他几列，第一范式就是无重复的域。<br>第二范式：首先是在第一范式的基础上，另外包含两部分的内容，一是表必须有主键，二是没有包含在主键中的列必须完全依赖于主键，二不能只依赖于主键的一部分。<br>第三范式：在第二范式的基础之上，非主键列必须直接依赖于主键不能存在传递依赖。</p>
-<p>目的：消除冗余，单纯依赖关系。不允许数据库表出现冗余字段，不允许表之间多重依赖<br>参考文献<br><a href="https://www.jianshu.com/p/af48705f20b8" target="_blank" rel="noopener">常见Mysql的慢查询优化方式</a><br><a href="https://www.jianshu.com/p/9cd1c333874f" target="_blank" rel="noopener">MySQL中的慢查询</a><br><a href="https://blog.csdn.net/timchen525/article/details/75268151" target="_blank" rel="noopener">关于MySQL 通用查询日志和慢查询日志分析</a></p>
+<p>参考文献<br><a href="https://www.jianshu.com/p/af48705f20b8" target="_blank" rel="noopener">常见Mysql的慢查询优化方式</a><br><a href="https://www.jianshu.com/p/9cd1c333874f" target="_blank" rel="noopener">MySQL中的慢查询</a><br><a href="https://blog.csdn.net/timchen525/article/details/75268151" target="_blank" rel="noopener">关于MySQL 通用查询日志和慢查询日志分析</a></p>
 
     </div>
     
@@ -237,6 +296,11 @@
 </article>
 
 <div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/caozuoxitong/" class="pre-post btn btn-default" title="操作系统">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">操作系统</span>
+        </a>
     
     
         <a href="/ceshi/" class="next-post btn btn-default" title="测试知识">
@@ -284,7 +348,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySql慢查询"><span class="toc-text">MySql慢查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查询数据库比较慢可能是哪些原因造成的？"><span class="toc-text">查询数据库比较慢可能是哪些原因造成的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何解决慢查询问题"><span class="toc-text">如何解决慢查询问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计三范式"><span class="toc-text">设计三范式</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#索引有什么副作用吗？"><span class="toc-text">索引有什么副作用吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主键和外键"><span class="toc-text">主键和外键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-text">事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#聚集索引和非聚集索引的区别？"><span class="toc-text">聚集索引和非聚集索引的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计三范式"><span class="toc-text">设计三范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySql慢查询"><span class="toc-text">MySql慢查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查询数据库比较慢可能是哪些原因造成的？"><span class="toc-text">查询数据库比较慢可能是哪些原因造成的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何解决慢查询问题"><span class="toc-text">如何解决慢查询问题</span></a></li></ol></li></ol>
         
     </div>
 </aside>

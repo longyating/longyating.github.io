@@ -16,10 +16,11 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="吉他">
+    <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="简介　　这首曲子是我和好朋友若水清风的第一次合作。愿樱曲风凄美，遂有感将秒五片段加到作品中。视频中加入了一些鸟声等特效，意在渲染当时的演奏场景。末尾作词是自己对秒五中主人公故事的一些理解，也是对...">
+    <meta name="description" content="进程间的通信方式有哪些？（1）管道( pipe )：管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。
+（2）命名管道 (na...">
 
 
 
@@ -31,7 +32,7 @@
     <!--Title-->
 
 
-<title>【吉他指弹】愿樱 | 龙娅婷</title>
+<title>操作系统 | 龙娅婷</title>
 
 
     <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
@@ -64,7 +65,7 @@
 
     
 
-<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
+</head>
 
 </html>
 <!--[if lte IE 8]>
@@ -152,16 +153,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="【吉他指弹】愿樱">
+        <h1 id="操作系统">
             
-	            【吉他指弹】愿樱
+	            操作系统
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/吉他/">吉他</a>
+            <a class="category-link" href="/categories/有趣的题/">有趣的题</a>
         </span>
     
 
@@ -169,8 +170,6 @@
         <span class="fa-wrap">
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
-                
-                    <a class="tag-link" href="/tags/吉他/">吉他</a>
                 
             </span>
         </span>
@@ -180,7 +179,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/02/11</span>
+            <span class="date-meta">2020/04/16</span>
         </span>
         
     
@@ -190,21 +189,19 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>　　这首曲子是我和好朋友若水清风的第一次合作。愿樱曲风凄美，遂有感将秒五片段加到作品中。视频中加入了一些鸟声等特效，意在渲染当时的演奏场景。末尾作词是自己对秒五中主人公故事的一些理解，也是对现在分离在五湖四海的大学同学的怀念。取景地选于我的母校郑州大学，作为毕业留念。<br><a id="more"></a></p>
-<hr>
-<h2 id="吉他演奏视频"><a href="#吉他演奏视频" class="headerlink" title="吉他演奏视频"></a>吉他演奏视频</h2><div id="dplayer10" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer10"),"theme":"#FADFA3","loop":true,"video":{"url":"https://hexofile.oss-cn-beijing.aliyuncs.com/yuanYing/yuanYing.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
-<hr>
-<h2 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=3&id=1369034664&auto=0s&height=66"></iframe>
+        <h2 id="进程间的通信方式有哪些？"><a href="#进程间的通信方式有哪些？" class="headerlink" title="进程间的通信方式有哪些？"></a><a href="https://www.sohu.com/a/278406122_463974" target="_blank" rel="noopener">进程间的通信方式有哪些？</a></h2><p>（1）管道( pipe )：管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。</p>
+<p>（2）命名管道 (named pipe) ：命名管道也是半双工的通信方式，但是它允许无亲缘关系进程间的通信。</p>
+<p>（3）信号量( semophore ) ： 信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不同线程之间的同步手段。</p>
+<p>（4）消息队列( message queue ) ：消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。</p>
+<p>（5）信号 ( sinal ) ：信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。</p>
+<p>（6）共享内存( shared memory ) ：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的 IPC 方式，它是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号两，配合使用，来实现进程间的同步和通信。</p>
+<p>（7）套接字( socket ) ：套解口也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同及其间的进程通信。</p>
+<h2 id="随机读写和顺序读写的区别和优缺点？"><a href="#随机读写和顺序读写的区别和优缺点？" class="headerlink" title="随机读写和顺序读写的区别和优缺点？"></a><a href="https://zhidao.baidu.com/question/2208010151792222908.html" target="_blank" rel="noopener">随机读写和顺序读写的区别和优缺点？</a></h2><p>随机和顺序读写，是存储器的两种输入输出方式。</p>
+<p>随机读写占用空间多，但速度快，便于进行数据处理zhidao，而顺序读写速度慢，空间小，数据处理复杂</p>
+<p>随机和顺序读写，是存储器的两种输入输出方式。</p>
+<p>存储的数据在磁盘中占据空间，对于一个新磁盘，操作系统会将数据文件依次写入磁盘，当有些数据被删除时，就会空出该数据原来占有的存储空专间，时间长了，不断的写入、删除数据，就会产生很多零零散散的存储空间，就会造成一个较大的数据文件放在许多不连续的存贮空间上，读写些这部分数据时，就是随机读属写，磁头要不断的调整磁道的位置，以在不同位置上的读写数据，相对于连续空间上的顺序读写，要耗时很多。</p>
+<p>在开机时、启动大型程序时，电脑要读取大量小文件，而这些文件也不是连续存放的，也属于随机读取的范围。</p>
 
-<hr>
-<h2 id="吉他谱"><a href="#吉他谱" class="headerlink" title="吉他谱"></a>吉他谱</h2>
-
-	<div class="row">
-    <embed src="https://hexofile.oss-cn-beijing.aliyuncs.com/yuanYing/yuanYing.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
- 
     </div>
     
     <div class="post-footer">
@@ -221,15 +218,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/1967/" class="pre-post btn btn-default" title="【吉他指弹】1967">
+        <a href="/hailiangshuju/" class="pre-post btn btn-default" title="海量数据题方法总结">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【吉他指弹】1967</span>
+            <span class="hidden-xs">海量数据题方法总结</span>
         </a>
     
     
-        <a href="/十里花道/" class="next-post btn btn-default" title="【吉他指弹】十里花道">
+        <a href="/Mysql/" class="next-post btn btn-default" title="Mysql要学习的不仅仅是增删改查">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">【吉他指弹】十里花道</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">Mysql要学习的不仅仅是增删改查</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -272,7 +269,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#吉他演奏视频"><span class="toc-text">吉他演奏视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#音频"><span class="toc-text">音频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#吉他谱"><span class="toc-text">吉他谱</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#进程间的通信方式有哪些？"><span class="toc-text">进程间的通信方式有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#随机读写和顺序读写的区别和优缺点？"><span class="toc-text">随机读写和顺序读写的区别和优缺点？</span></a></li></ol>
         
     </div>
 </aside>
