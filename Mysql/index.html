@@ -19,8 +19,8 @@
     <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="索引有什么副作用吗？（1）索引是有大量数据的时候才建立的，没有大量数据反而会浪费时间，因为索引是使用二叉树建立.
-（2）当一个系统查询比较频繁，而新建，修改等操作比较少时，可以创建索引，这样查询...">
+    <meta name="description" content="Mysql引擎类型索引有什么副作用吗？（1）索引是有大量数据的时候才建立的，没有大量数据反而会浪费时间，因为索引是使用二叉树建立.
+（2）当一个系统查询比较频繁，而新建，修改等操作比较少时，可以...">
 
 
 
@@ -189,7 +189,7 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="索引有什么副作用吗？"><a href="#索引有什么副作用吗？" class="headerlink" title="索引有什么副作用吗？"></a><a href="https://www.cnblogs.com/dyh-air/articles/7891264.html" target="_blank" rel="noopener">索引有什么副作用吗？</a></h2><p>（1）索引是有大量数据的时候才建立的，没有大量数据反而会浪费时间，因为索引是使用二叉树建立.</p>
+        <h2 id="Mysql引擎类型"><a href="#Mysql引擎类型" class="headerlink" title="Mysql引擎类型"></a>Mysql引擎类型</h2><h2 id="索引有什么副作用吗？"><a href="#索引有什么副作用吗？" class="headerlink" title="索引有什么副作用吗？"></a><a href="https://www.cnblogs.com/dyh-air/articles/7891264.html" target="_blank" rel="noopener">索引有什么副作用吗？</a></h2><p>（1）索引是有大量数据的时候才建立的，没有大量数据反而会浪费时间，因为索引是使用二叉树建立.</p>
 <p>（2）当一个系统查询比较频繁，而新建，修改等操作比较少时，可以创建索引，这样查询的速度会比以前快很多，同时也带来弊端，就是新建或修改等操作时，比没有索引或没有建立覆盖索引时的要慢。</p>
 <p>（3）索引并不是越多越好，太多索引会占用很多的索引表空间，甚至比存储一条记录更多。<br>对于需要频繁新增记录的表，最好不要创建索引，没有索引的表，执行insert、append都很快，有了索引以后，会多一个维护索引的操作，一些大表可能导致insert 速度非常慢。</p>
 <h2 id="主键和外键"><a href="#主键和外键" class="headerlink" title="主键和外键"></a><a href="https://www.cnblogs.com/PyLearn/p/7624768.html" target="_blank" rel="noopener">主键和外键</a></h2><p>成绩表中的学号不是成绩表的主键，但它和学生表中的学号相对应，并且学生表中的学号是学生表的主键，则称成绩表中的学号是学生表的外键</p>
@@ -225,14 +225,25 @@
 </table>
 <h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a><a href="https://baijiahao.baidu.com/s?id=1650065302592962405&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">事务</a></h2><p>事务处理可以用来维护数据库的完整性，保证成批的 SQL 语句<strong>要么全部执行，要么全部不执行。</strong><br>事务是必须满足4个条件（ACID）：：原子性（Atomicity，或称不可分割性）、一致性（Consistency）、隔离性（Isolation，又称独立性）、持久性（Durability）。</p>
 <ul>
-<li><p>（原子性Atomicity）：原子性指的是事务是一个不可分割的，要么都执行要么都不执行。</p>
+<li><p>原子性Atomicity：原子性指的是事务是一个不可分割的，要么都执行要么都不执行。</p>
 </li>
-<li><p>（一致性Consistency）：事务必须使得数据库从一个一致性状态，到另外一个一致性状态。</p>
+<li><p>一致性Consistency：在一致性状态下，所有事务对同一个数据的读取结果都是相同的。</p>
 </li>
-<li><p>（隔离性Isolation）：指的是一个事务的执行，不能被其他的事务所干扰。</p>
+<li><p>隔离性Isolation：指的是一个事务的执行，不能被其他的事务所干扰。</p>
 </li>
-<li><p>（持久性Durability）：持久性指的是一个事务一旦提交了之后，对数据库的改变就是永久的。</p>
+<li><p>持久性Durability：持久性指的是一个事务一旦提交了之后，对数据库的改变就是永久的。</p>
 </li>
+</ul>
+<h2 id="并发一致性问题"><a href="#并发一致性问题" class="headerlink" title="并发一致性问题"></a>并发一致性问题</h2><ul>
+<li>读脏数据：T1 修改一个数据，T2 随后读取这个数据。如果 T1 撤销了这次修改，那么 T2 读取的数据是脏数据。</li>
+<li>不可重复读： T2 读取一个数据，T1 对该数据做了修改。如果 T2 再次读取这个数据，此时读取的结果和第一次读取的结果不同。</li>
+<li>幻影读：T1 读取某个范围的数据，T2 在这个范围内插入新的数据，T1 再次读取这个范围的数据，此时读取的结果和和第一次读取的结果不同。</li>
+</ul>
+<h2 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a><a href="https://www.cnblogs.com/wyaokai/p/10921323.html" target="_blank" rel="noopener">事务隔离级别</a></h2><ul>
+<li>未提交读：事务中的修改，即使没有提交，对其它事务也是可见的。</li>
+<li>提交读：一个事务只能读取已经提交的事务所做的修改。换句话说，一个事务所做的修改在提交之前对其它事务是不可见的。</li>
+<li>可重复读：保证在同一个事务中多次读取同一数据的结果是一样的。</li>
+<li>可串行化：强制事务串行执行，这样多个事务互不干扰，不会出现并发一致性问题。该隔离级别需要加锁实现，因为要使用加锁机制保证同一时间只有一个事务执行，也就是保证事务串行执行。<br><img src="https://hexofile.oss-cn-beijing.aliyuncs.com/Learning/mysql/%E9%9A%94%E7%A6%BB.png" alt></li>
 </ul>
 <h2 id="聚集索引和非聚集索引的区别？"><a href="#聚集索引和非聚集索引的区别？" class="headerlink" title="聚集索引和非聚集索引的区别？"></a><a href="https://www.jianshu.com/p/d95d6d692e2c" target="_blank" rel="noopener">聚集索引和非聚集索引的区别？</a></h2><p>聚集索引表示表中存储的数据按照索引的顺序存储，检索效率比非聚集索引高，但对数据更新影响较大。</p>
 <p>非聚集索引表示数据存储在一个地方，索引存储在另一个地方，索引带有指针指向数据的存储位置，非聚集索引检索效率比聚集索引低，但对数据更新影响较小。</p>
@@ -348,7 +359,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#索引有什么副作用吗？"><span class="toc-text">索引有什么副作用吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主键和外键"><span class="toc-text">主键和外键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-text">事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#聚集索引和非聚集索引的区别？"><span class="toc-text">聚集索引和非聚集索引的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计三范式"><span class="toc-text">设计三范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySql慢查询"><span class="toc-text">MySql慢查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查询数据库比较慢可能是哪些原因造成的？"><span class="toc-text">查询数据库比较慢可能是哪些原因造成的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何解决慢查询问题"><span class="toc-text">如何解决慢查询问题</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mysql引擎类型"><span class="toc-text">Mysql引擎类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引有什么副作用吗？"><span class="toc-text">索引有什么副作用吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主键和外键"><span class="toc-text">主键和外键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-text">事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#并发一致性问题"><span class="toc-text">并发一致性问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务隔离级别"><span class="toc-text">事务隔离级别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#聚集索引和非聚集索引的区别？"><span class="toc-text">聚集索引和非聚集索引的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计三范式"><span class="toc-text">设计三范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySql慢查询"><span class="toc-text">MySql慢查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查询数据库比较慢可能是哪些原因造成的？"><span class="toc-text">查询数据库比较慢可能是哪些原因造成的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何解决慢查询问题"><span class="toc-text">如何解决慢查询问题</span></a></li></ol></li></ol>
         
     </div>
 </aside>
