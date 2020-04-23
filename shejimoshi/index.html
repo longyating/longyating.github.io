@@ -19,9 +19,9 @@
     <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="23种设计模式深入解析，史上最通俗易懂的设计模式讲解
+    <meta name="description" content="Spring中用到了哪些设计模式23种设计模式深入解析，史上最通俗易懂的设计模式讲解
 单例模式
-懒汉式-线程不安全以下实现中，私有静态变量 uniqueInstance 被延迟实例化，这样做的好处是，如果没有用到该类，那么就不...">
+懒汉式-线程不安全以下实现中，私有静态变量 uniqueInstance 被延迟实例化，这样做的好...">
 
 
 
@@ -190,7 +190,7 @@
     </div>
     
     <div class="post-body post-content">
-        <p><a href="https://www.cnblogs.com/numpycomcn/p/11829142.html" target="_blank" rel="noopener">23种设计模式深入解析，史上最通俗易懂的设计模式讲解</a></p>
+        <p><a href="https://blog.csdn.net/qq_34337272/article/details/90487768?fps=1&amp;locationNum=2" target="_blank" rel="noopener">Spring中用到了哪些设计模式</a><br><a href="https://www.cnblogs.com/numpycomcn/p/11829142.html" target="_blank" rel="noopener">23种设计模式深入解析，史上最通俗易懂的设计模式讲解</a></p>
 <h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a><a href="https://cyc2018.github.io/CS-Notes/#/notes/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%20%20-%20%E5%8D%95%E4%BE%8B" target="_blank" rel="noopener">单例模式</a></h2><ul>
 <li>懒汉式-线程不安全<br>以下实现中，私有静态变量 uniqueInstance 被延迟实例化，这样做的好处是，如果没有用到该类，那么就不会实例化 uniqueInstance，从而节约资源。</li>
 <li>饿汉式-线程安全<br>线程不安全问题主要是由于 uniqueInstance 被实例化多次，采取直接实例化 uniqueInstance 的方式就不会产生线程不安全问题。但是直接实例化的方式也丢失了延迟实例化带来的节约资源的好处。</li>

@@ -19,7 +19,8 @@
     <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="1、项目入口中，实现接口12345678910111213@SpringBootApplicationpublic class Application extends SpringBootSer...">
+    <meta name="description" content="nginx反向代理是什么分布式下会话保持，即session一致性一致性Hash算法原理nginx 如何实现负载均衡
+">
 
 
 
@@ -31,7 +32,7 @@
     <!--Title-->
 
 
-<title>如何部署一个SpringBoot项目实现线上访问 | 龙娅婷</title>
+<title>nginx | 龙娅婷</title>
 
 
     <link rel="alternate" href="/atom.xml" title="龙娅婷" type="application/atom+xml">
@@ -152,16 +153,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="如何部署一个SpringBoot项目实现线上访问">
+        <h1 id="nginx">
             
-	            如何部署一个SpringBoot项目实现线上访问
+	            nginx
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/充电学习/">充电学习</a>
+            <a class="category-link" href="/categories/有趣的题/">有趣的题</a>
         </span>
     
 
@@ -178,7 +179,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2020/02/21</span>
+            <span class="date-meta">2020/04/23</span>
         </span>
         
     
@@ -188,21 +189,7 @@
     </div>
     
     <div class="post-body post-content">
-        <p>1、项目入口中，实现接口<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> <span class="keyword">extends</span> <span class="title">SpringBootServletInitializer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> SpringApplicationBuilder <span class="title">configure</span><span class="params">(SpringApplicationBuilder application)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> application.sources(Application.class);  <span class="comment">//Application对应class名称</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(Application.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>2、在<code>pom.xml</code>中添加一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;packaging&gt;war&lt;/packaging&gt;</span><br><span class="line">或</span><br><span class="line">&lt;packaging&gt;jar&lt;/packaging&gt;</span><br></pre></td></tr></table></figure></p>
-<p>3、把项目中的其他测试的所有main函数更名或者注释，保证项目只有一个入口。</p>
-<p>4、cmd到工程目录下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mvn clean  //清除了target目录</span><br><span class="line">mvn package -Dmaven.test.skip=true</span><br></pre></td></tr></table></figure>
-<p>注：报错，xxx包不存在的解决：找到指定的文件下，检查下 import中是否有灰色的，应该是不小心导错了无用且不存在的包，删除即可。</p>
-<p>5、cmd到target目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar xxx.jar</span><br></pre></td></tr></table></figure></p>
-<p>在8080端口下就可以打开了</p>
-<p>注：4和5两步骤也可以在IDEA里，对应”clean” “package”</p>
-<p>6、在阿里云Linux服务器上部署。安装JDK后。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar wenda.jar &gt; temp.txt 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></p>
-<p>7、如果重新上传<br>显示当前终端开的后台任务。 [xxx]为PID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jobs -l</span><br></pre></td></tr></table></figure></p>
-<p>终端已经关闭，找到 java -jar wenda.jar 的PID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps ux</span><br></pre></td></tr></table></figure></p>
-<p>关闭PID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 PID</span><br></pre></td></tr></table></figure></p>
-<h2 id="域名的配置"><a href="#域名的配置" class="headerlink" title="域名的配置"></a>域名的配置</h2><p>安装好 nginx 后<br>1、 查看nginx安装目录，并进入nginx.conf文件中<br>ps  -ef | grep nginx</p>
-<p>参考文献：<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-create-a-deployable-war-file" target="_blank" rel="noopener">官方教程|导出一个可部署的War文件</a></p>
+        <p><a href="https://www.cnblogs.com/ysocean/p/9392908.html" target="_blank" rel="noopener">nginx反向代理是什么</a><br><a href="https://blog.csdn.net/u014590757/article/details/79767063" target="_blank" rel="noopener">分布式下会话保持，即session一致性</a><br><a href="https://www.cnblogs.com/lpfuture/p/5796398.html" target="_blank" rel="noopener">一致性Hash算法原理</a><br><a href="https://www.cnblogs.com/1214804270hacker/p/9325150.html" target="_blank" rel="noopener">nginx 如何实现负载均衡</a></p>
 
     </div>
     
@@ -220,15 +207,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/GC/" class="pre-post btn btn-default" title="JVM垃圾回收机制">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">JVM垃圾回收机制</span>
-        </a>
     
-    
-        <a href="/nowcoder/" class="next-post btn btn-default" title="剑指Offer解题思路">
+        <a href="/spring/" class="next-post btn btn-default" title="Spring">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">剑指Offer解题思路</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">Spring</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -271,7 +253,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#域名的配置"><span class="toc-text">域名的配置</span></a></li></ol>
+            <p>暂无目录</p>
         
     </div>
 </aside>
