@@ -19,7 +19,8 @@
     <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="页和段进程和线程的区别进程进程是资源分配的基本单位。进程控制块 (Process Control Block, PCB) 描述进程的基本信息和运行状态，所谓的创建进程和撤销进程，都是指对 PCB...">
+    <meta name="description" content="内核态与用户态面试考点
+进程和线程的区别进程进程是资源分配的基本单位。进程控制块 (Process Control Block, PCB) 描述进程的基本信息和运行状态，所谓的创建进程和撤销进程...">
 
 
 
@@ -188,7 +189,8 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="页和段"><a href="#页和段" class="headerlink" title="页和段"></a>页和段</h2><h2 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a><a href="https://cyc2018.github.io/CS-Notes/#/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20-%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86" target="_blank" rel="noopener">进程和线程的区别</a></h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>进程是资源分配的基本单位。<br>进程控制块 (Process Control Block, PCB) 描述进程的基本信息和运行状态，所谓的创建进程和撤销进程，都是指对 PCB 的操作。</p>
+        <h2 id="内核态与用户态"><a href="#内核态与用户态" class="headerlink" title="内核态与用户态"></a><a href="https://blog.csdn.net/qq_39823627/article/details/78736650?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1" target="_blank" rel="noopener">内核态与用户态</a></h2><p><a href="https://blog.csdn.net/qq_29996285/article/details/88078906" target="_blank" rel="noopener">面试考点</a></p>
+<h2 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a><a href="https://cyc2018.github.io/CS-Notes/#/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20-%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86" target="_blank" rel="noopener">进程和线程的区别</a></h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>进程是资源分配的基本单位。<br>进程控制块 (Process Control Block, PCB) 描述进程的基本信息和运行状态，所谓的创建进程和撤销进程，都是指对 PCB 的操作。</p>
 <h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>线程是独立调度的基本单位。<br>一个进程中可以有多个线程，它们共享进程资源。<br>QQ 和浏览器是两个进程，浏览器进程里面有很多线程，例如 HTTP 请求线程、事件响应线程、渲染线程等等，线程的并发执行使得在浏览器中点击一个新链接从而发起 HTTP 请求时，浏览器还可以响应用户的其它事件。</p>
 <h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>Ⅰ 拥有资源</p>
 <p>进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问隶属进程的资源。</p>
@@ -294,7 +296,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#页和段"><span class="toc-text">页和段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程和线程的区别"><span class="toc-text">进程和线程的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程"><span class="toc-text">进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程"><span class="toc-text">线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区别"><span class="toc-text">区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程的状态"><span class="toc-text">进程的状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#孤儿进程和僵尸进程"><span class="toc-text">孤儿进程和僵尸进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#孤儿进程"><span class="toc-text">孤儿进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#僵尸进程"><span class="toc-text">僵尸进程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程间的通信方式有哪些？"><span class="toc-text">进程间的通信方式有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#随机读写和顺序读写的区别和优缺点？"><span class="toc-text">随机读写和顺序读写的区别和优缺点？</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#内核态与用户态"><span class="toc-text">内核态与用户态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程和线程的区别"><span class="toc-text">进程和线程的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进程"><span class="toc-text">进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程"><span class="toc-text">线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区别"><span class="toc-text">区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程的状态"><span class="toc-text">进程的状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#孤儿进程和僵尸进程"><span class="toc-text">孤儿进程和僵尸进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#孤儿进程"><span class="toc-text">孤儿进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#僵尸进程"><span class="toc-text">僵尸进程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程间的通信方式有哪些？"><span class="toc-text">进程间的通信方式有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#随机读写和顺序读写的区别和优缺点？"><span class="toc-text">随机读写和顺序读写的区别和优缺点？</span></a></li></ol>
         
     </div>
 </aside>
