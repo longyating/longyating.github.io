@@ -19,8 +19,9 @@
     <meta name="keywords" content="关键字">
 
 
-    <meta name="description" content="Mysql引擎类型索引有什么副作用吗？（1）索引是有大量数据的时候才建立的，没有大量数据反而会浪费时间，因为索引是使用二叉树建立.
-（2）当一个系统查询比较频繁，而新建，修改等操作比较少时，可以...">
+    <meta name="description" content="Mysql引擎类型Mysql数据库引擎该如何选择？
+索引有什么副作用吗？（1）索引是有大量数据的时候才建立的，没有大量数据反而会浪费时间，因为索引是使用二叉树建立.
+（2）当一个系统查询比较频繁...">
 
 
 
@@ -189,7 +190,8 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="Mysql引擎类型"><a href="#Mysql引擎类型" class="headerlink" title="Mysql引擎类型"></a>Mysql引擎类型</h2><h2 id="索引有什么副作用吗？"><a href="#索引有什么副作用吗？" class="headerlink" title="索引有什么副作用吗？"></a><a href="https://www.cnblogs.com/dyh-air/articles/7891264.html" target="_blank" rel="noopener">索引有什么副作用吗？</a></h2><p>（1）索引是有大量数据的时候才建立的，没有大量数据反而会浪费时间，因为索引是使用二叉树建立.</p>
+        <h2 id="Mysql引擎类型"><a href="#Mysql引擎类型" class="headerlink" title="Mysql引擎类型"></a>Mysql引擎类型</h2><p><a href="https://baijiahao.baidu.com/s?id=1646964961421893947&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">Mysql数据库引擎该如何选择？</a></p>
+<h2 id="索引有什么副作用吗？"><a href="#索引有什么副作用吗？" class="headerlink" title="索引有什么副作用吗？"></a><a href="https://www.cnblogs.com/dyh-air/articles/7891264.html" target="_blank" rel="noopener">索引有什么副作用吗？</a></h2><p>（1）索引是有大量数据的时候才建立的，没有大量数据反而会浪费时间，因为索引是使用二叉树建立.</p>
 <p>（2）当一个系统查询比较频繁，而新建，修改等操作比较少时，可以创建索引，这样查询的速度会比以前快很多，同时也带来弊端，就是新建或修改等操作时，比没有索引或没有建立覆盖索引时的要慢。</p>
 <p>（3）索引并不是越多越好，太多索引会占用很多的索引表空间，甚至比存储一条记录更多。<br>对于需要频繁新增记录的表，最好不要创建索引，没有索引的表，执行insert、append都很快，有了索引以后，会多一个维护索引的操作，一些大表可能导致insert 速度非常慢。</p>
 <h2 id="主键和外键"><a href="#主键和外键" class="headerlink" title="主键和外键"></a><a href="https://www.cnblogs.com/PyLearn/p/7624768.html" target="_blank" rel="noopener">主键和外键</a></h2><p>成绩表中的学号不是成绩表的主键，但它和学生表中的学号相对应，并且学生表中的学号是学生表的主键，则称成绩表中的学号是学生表的外键</p>
